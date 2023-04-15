@@ -2,7 +2,8 @@
 import { onMounted, ref } from 'vue'
 
 import ModalDemo from './ModalDemo.vue'
-import ButtonDemo from '@/views/ButtonDemo.vue'
+import ButtonDemo from './ButtonDemo.vue'
+import TagDemo from './TagDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/hooks/useMouse'
@@ -51,23 +52,26 @@ async function fetchSentence() {
       </RouterLink>
     </div>
 
-    <div class="inline-block border p-4">
-      useMouseClick hook
-      <p>
-        Mouse click x:
-        <span class="text-lg text-red-500 font-bold">
-          {{ mouse.x }}
-        </span>
-      </p>
-      <p>
-        Mouse click y:
-        <span class="text-lg text-blue-500 font-bold">
-          {{ mouse.y }}
-        </span>
-      </p>
+    <div>
+      <div class="inline-block border p-4">
+        useMouseClick hook
+        <p>
+          Mouse click x:
+          <span class="text-lg text-red-500 font-bold">
+            {{ mouse.x }}
+          </span>
+        </p>
+        <p>
+          Mouse click y:
+          <span class="text-lg text-blue-500 font-bold">
+            {{ mouse.y }}
+          </span>
+        </p>
+      </div>
     </div>
 
-    <ButtonDemo />
     <ModalDemo />
+    <ButtonDemo />
+    <TagDemo />
   </div>
 </template>

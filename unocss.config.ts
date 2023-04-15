@@ -19,7 +19,7 @@ export default defineConfig({
       // scale: 1.2,
       warn: true,
       extraProperties: {
-        cursor: 'pointer',
+        // cursor: 'pointer',
         // display: 'inline-block',
       },
     }),
