@@ -50,10 +50,10 @@ onUnmounted(() => {
   </div>
   <div
     v-if="modelValue"
-    class="fixed z-101"
+    class="fixed inset-0 z-101"
     aria-hidden="true"
     @click="close"
   >
-    <div class="fixed inset-0 bg-gray-500 opacity-75" />
+    <div class="absolute inset-0 bg-gray-500 opacity-75" />
   </div>
 </template>

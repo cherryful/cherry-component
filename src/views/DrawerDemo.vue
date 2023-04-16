@@ -1,7 +1,8 @@
 <script setup>
 import { reactive } from 'vue'
 import Drawer from '@/components/base/Drawer.vue'
-const model = reactive({
+
+const drawer = reactive({
   left: false,
   right: false,
   top: false,
@@ -16,25 +17,23 @@ const model = reactive({
       <span class="inline-block w-20">
         placement:
       </span>
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="model.left = true">
+      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.left = true">
         left
       </button>
-
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="model.right = true">
+      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.right = true">
         right
       </button>
-
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="model.top = true">
+      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.top = true">
         top
       </button>
-
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="model.bottom = true">
+      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.bottom = true">
         bottom
       </button>
     </div>
   </div>
-  <Drawer v-model="model.left" placement="left" />
-  <Drawer v-model="model.right" placement="right" />
-  <Drawer v-model="model.top" placement="top" />
-  <Drawer v-model="model.bottom" placement="bottom" />
+
+  <Drawer v-model="drawer.left" placement="left" />
+  <Drawer v-model="drawer.right" placement="right" />
+  <Drawer v-model="drawer.top" placement="top" />
+  <Drawer v-model="drawer.bottom" placement="bottom" />
 </template>
