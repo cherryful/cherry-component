@@ -1,1 +1,0 @@
-import{bs as t,aG as o,at as s,p as a,y as c,bk as n,q as r}from"./index-14efed90.js";const _={},l={class:"m-5"},d=r("button",{class:"btn"}," Back Demo Page ",-1);function i(m,f){const e=o("RouterLink");return s(),a("div",l,[c(e,{to:"/"},{default:n(()=>[d]),_:1})])}const u=t(_,[["render",i]]);export{u as default};
