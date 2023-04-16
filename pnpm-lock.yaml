@@ -27,6 +27,9 @@ devDependencies:
   '@iconify/json':
     specifier: ^2.2.50
     version: 2.2.50
+  '@julr/unocss-preset-forms':
+    specifier: ^0.0.5
+    version: 0.0.5(unocss@0.50.8)
   '@types/node':
     specifier: ^18.15.11
     version: 18.15.11
@@ -558,6 +561,16 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@julr/unocss-preset-forms@0.0.5(unocss@0.50.8):
+    resolution: {integrity: sha512-lUMhKc8KooObDWIs0wyqh903ix5a6PRHtq1RAszhyEoDR2aqbnfSXnv0QiG2lDp2AWafioNbgquFGiUyyJCDVg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      unocss: '>= 0.31.13 < 1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      unocss: 0.50.8(postcss@8.4.21)(vite@4.2.1)
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -3100,6 +3113,11 @@ packages:
   /min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
+    dev: true
+
+  /mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: true
 
   /minimatch@3.1.2:

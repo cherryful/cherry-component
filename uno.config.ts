@@ -5,6 +5,7 @@ import {
   presetWebFonts,
 } from 'unocss'
 
+import { presetForms } from '@julr/unocss-preset-forms'
 import { colors } from 'unocss/preset-mini'
 
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
   ],
   presets: [
     presetUno(),
+    presetForms(),
     presetIcons({
       // scale: 1.2,
       warn: true,

@@ -4,6 +4,7 @@ import { onMounted, ref } from 'vue'
 import ModalDemo from './ModalDemo.vue'
 import ButtonDemo from './ButtonDemo.vue'
 import TagDemo from './TagDemo.vue'
+import CheckboxDemo from './CheckboxDemo.vue'
 import ProgressDemo from './ProgressDemo.vue'
 
 import { useStore } from '@/store'
@@ -75,5 +76,6 @@ async function fetchSentence() {
     <ButtonDemo />
     <TagDemo />
     <ProgressDemo />
+    <CheckboxDemo />
   </div>
 </template>
