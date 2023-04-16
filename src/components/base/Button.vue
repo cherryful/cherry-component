@@ -15,12 +15,14 @@ withDefaults(defineProps<Props>(), {
 
 const colors = {
   empty: '',
-  default: 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 focus:ring-indigo-500',
-  success: 'text-white bg-green-500 hover:bg-green-700 focus:ring-green-500',
-  info: 'text-white bg-blue-500 hover:bg-blue-700 focus:ring-blue-500',
-  warning: 'text-white bg-yellow-500 hover:bg-yellow-700 focus:ring-yellow-500',
-  error: 'text-white bg-red-500 hover:bg-red-700 focus:ring-red-500',
-  primary: 'text-white bg-indigo-500 hover:bg-indigo-700 focus:ring-indigo-500',
+  default: 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 focus:ring-primary-500',
+  success: 'text-white bg-success-500 hover:bg-success-700 focus:ring-success-500',
+  info: 'text-white bg-info-500 hover:info focus:ring-info-500',
+  warning: 'text-white bg-warning-500 hover:bg-warning-700 focus:ring-warning-500',
+  error: 'text-white bg-error-500 hover:bg-error-700 focus:ring-error-500',
+  primary: 'text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500',
+  secondary: 'text-white bg-secondary-500 hover:bg-secondary-700 focus:ring-secondary-500',
+  accent: 'text-white bg-accent-500 hover:bg-accent-700 focus:ring-accent-500',
 }
 
 const sizes = {
@@ -33,14 +35,14 @@ const sizes = {
 
 <template>
   <button
-    :disabled="disabled"
     type="button"
+    :disabled="disabled"
     class="whitespace-nowrap inline-flex w-full items-center justify-center
     rounded-md shadow-sm text-xs font-sans font-semibold leading-4
     focus:outline-none focus:ring-2 focus:ring-offset-2
     disabled:cursor-not-allowed disabled:opacity-30
     sm:w-auto"
-    :class="[colors[type], sizes[size], custom]"
+    :class="[sizes[size], colors[type], custom]"
   >
     <slot />
   </button>

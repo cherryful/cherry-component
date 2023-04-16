@@ -5,7 +5,20 @@ import {
   presetWebFonts,
 } from 'unocss'
 
+import { colors } from 'unocss/preset-mini'
+
 export default defineConfig({
+  theme: {
+    colors: {
+      success: colors.green,
+      info: colors.blue,
+      warning: colors.yellow,
+      error: colors.red,
+      primary: colors.indigo,
+      secondary: colors.teal,
+      accent: colors.pink,
+    },
+  },
   shortcuts: [
     ['f-c-c', 'flex items-center justify-center'],
     ['wh-full', 'w-full h-full'],

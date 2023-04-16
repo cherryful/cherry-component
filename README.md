@@ -1,4 +1,4 @@
-# vue3-unocss-components-starter
+# vue3-unocss-component-starter
 
 Features:
 

@@ -4,6 +4,7 @@ import { onMounted, ref } from 'vue'
 import ModalDemo from './ModalDemo.vue'
 import ButtonDemo from './ButtonDemo.vue'
 import TagDemo from './TagDemo.vue'
+import ProgressDemo from './ProgressDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/hooks/useMouse'
@@ -73,5 +74,6 @@ async function fetchSentence() {
     <ModalDemo />
     <ButtonDemo />
     <TagDemo />
+    <ProgressDemo />
   </div>
 </template>
