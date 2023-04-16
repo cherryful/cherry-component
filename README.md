@@ -1,19 +1,28 @@
-# Vue 3 + TypeScript + Vite
+# vue3-unocss-components-starter
 
-# Unocss + Tailwind UI
+Features:
 
-# VueRouter + Pinia
+- 🛠 [Vue 3](https://v3.vuejs.org/guide/introduction.html)
+- ⚡️ [Vite](https://vitejs.dev/guide/)
+- 🗂 [PNPM](https://pnpm.io)
+- 🎨 [UnoCSS](https://github.com/antfu/unocss)
+- 🛣 [Vue Router](https://github.com/vuejs/vue-router-next)
+- 🍍 [Pinia](https://pinia.vuejs.org/)
+- 🔡 [Inter var font](https://rsms.me/inter/)
+- 📄 [Github pages action](https://pages.github.com)
+- 🦾 TypeScript
+- 🧲 Fetch API
+- ⭐️ Basic Components based on headlessui
+- [antfu/eslint-config](https://github.com/antfu/eslint-config)
 
-# Fetch
-
-# Base Component
+## Basic Component
 
 - Button
 - Modal
 - Tag
 - ...
 
-# Github pages
+## Github pages
 
 The default github action will build to `gh-page` when pushing on `main` branch.
 
