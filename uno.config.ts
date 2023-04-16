@@ -14,7 +14,6 @@ export default defineConfig({
   ],
   presets: [
     presetUno(),
-    // presetAttributify(),
     presetIcons({
       // scale: 1.2,
       warn: true,
@@ -24,10 +23,9 @@ export default defineConfig({
       },
     }),
     presetWebFonts({
+      provider: 'bunny',
       fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
+        sans: 'Inter',
       },
     }),
   ],

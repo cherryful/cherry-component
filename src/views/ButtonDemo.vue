@@ -5,7 +5,7 @@ import Button from '@/components/base/Button.vue'
 <template>
   <div class="space-y-4">
     Button Demo:
-    <div class="space-x-3">
+    <div class="space-x-3 space-y-3">
       <span class="inline-block w-20">
         size:
       </span>
@@ -19,7 +19,7 @@ import Button from '@/components/base/Button.vue'
         button
       </Button>
     </div>
-    <div class="space-x-3">
+    <div class="space-x-3 space-y-3">
       <span class="inline-block w-20">
         type:
       </span>
@@ -42,7 +42,7 @@ import Button from '@/components/base/Button.vue'
         primary
       </Button>
     </div>
-    <div class="space-x-3">
+    <div class="space-x-3 space-y-3">
       <span class="inline-block w-20">
         disabled:
       </span>
@@ -50,7 +50,7 @@ import Button from '@/components/base/Button.vue'
         disabled
       </Button>
     </div>
-    <div class="space-x-3 flex items-center">
+    <div class="space-x-3 space-y-3 flex items-center">
       <span class="inline-block w-20">
         icon:
       </span>
@@ -61,7 +61,7 @@ import Button from '@/components/base/Button.vue'
         </div>
       </Button>
     </div>
-    <div class="space-x-3">
+    <div class="space-x-3 space-y-3">
       <span class="inline-block w-20">
         custom:
       </span>
