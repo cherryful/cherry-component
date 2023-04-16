@@ -18,8 +18,13 @@ Features:
 ## Basic Component
 
 - Button
-- Modal
 - Tag
+- Modal
+- Progress
+- Drawer
+- Checkbox
+- Switch
+- Alert
 - ...
 
 ## Github pages
