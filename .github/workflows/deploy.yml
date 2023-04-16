@@ -29,7 +29,7 @@ jobs:
 
       - name: Build
         env:
-          VITE_BASE_PUBLIC_PATH: ${{ env.VITE_BASE_PUBLIC_PATH }}
+          VITE_BASE_PUBLIC_PATH: ${{ vars.VITE_BASE_PUBLIC_PATH }}
         run: pnpm run build
 
       - name: Deploy
