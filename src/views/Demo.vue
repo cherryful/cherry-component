@@ -10,6 +10,7 @@ import SwitchDemo from './SwitchDemo.vue'
 import DrawerDemo from './DrawerDemo.vue'
 import AlertDemo from './AlertDemo.vue'
 
+import InputDemo from './InputDemo.vue'
 import { useStore } from '@/store'
 import useMouseClick from '@/hooks/useMouse'
 import api from '@/api'
@@ -82,6 +83,7 @@ async function fetchSentence() {
       <CheckboxDemo />
       <SwitchDemo />
       <AlertDemo />
+      <InputDemo />
     </div>
     <DrawerDemo />
   </div>
