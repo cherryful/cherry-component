@@ -16,18 +16,6 @@ setInterval(() => {
     <div class="space-y-6">
       Color:
       <div class="w-30">
-        <Progress color="success" :percentage="percentage" />
-      </div>
-      <div class="w-30">
-        <Progress color="info" :percentage="percentage" />
-      </div>
-      <div class="w-30">
-        <Progress color="error" :percentage="percentage" />
-      </div>
-      <div class="w-30">
-        <Progress color="warning" :percentage="percentage" />
-      </div>
-      <div class="w-30">
         <Progress color="primary" :percentage="percentage" />
       </div>
       <div class="w-30">
@@ -35,6 +23,18 @@ setInterval(() => {
       </div>
       <div class="w-30">
         <Progress color="accent" :percentage="percentage" />
+      </div>
+      <div class="w-30">
+        <Progress color="success" :percentage="percentage" />
+      </div>
+      <div class="w-30">
+        <Progress color="info" :percentage="percentage" />
+      </div>
+      <div class="w-30">
+        <Progress color="warning" :percentage="percentage" />
+      </div>
+      <div class="w-30">
+        <Progress color="error" :percentage="percentage" />
       </div>
     </div>
     <div class="space-y-6 space-x-5">

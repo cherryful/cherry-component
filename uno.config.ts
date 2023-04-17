@@ -3,6 +3,8 @@ import {
   presetIcons,
   presetUno,
   presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
 
 import { presetForms } from '@julr/unocss-preset-forms'
@@ -43,5 +45,9 @@ export default defineConfig({
         sans: 'Inter',
       },
     }),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
   ],
 })
