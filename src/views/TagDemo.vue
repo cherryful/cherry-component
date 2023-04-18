@@ -85,10 +85,7 @@ import Tag from '@/components/base/Tag.vue'
       <span class="inline-block w-20">
         custom:
       </span>
-      <Tag
-        type="empty"
-        custom="bg-pink-200 text-pink-600 px-4 py-2 border-2 border-pink-600 rounded-xl"
-      >
+      <Tag custom="bg-pink-200 text-pink-600 px-4 py-2 border-2 border-pink-600 rounded-xl">
         custom
       </Tag>
     </div>

@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div
     class="inline-block text-xs shadow-sm whitespace-nowrap cursor-default font-medium"
-    :class="[custom, {
+    :class="[custom || {
       'border border-gray-300': border,
 
       'default': type === 'default',
