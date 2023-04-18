@@ -9,8 +9,9 @@ import ProgressDemo from './ProgressDemo.vue'
 import SwitchDemo from './SwitchDemo.vue'
 import DrawerDemo from './DrawerDemo.vue'
 import AlertDemo from './AlertDemo.vue'
-
 import InputDemo from './InputDemo.vue'
+import PopoverDemo from './PopoverDemo.vue'
+
 import { useStore } from '@/store'
 import useMouseClick from '@/hooks/useMouse'
 import api from '@/api'
@@ -84,6 +85,7 @@ async function fetchSentence() {
       <SwitchDemo />
       <AlertDemo />
       <InputDemo />
+      <PopoverDemo />
     </div>
     <DrawerDemo />
   </div>
