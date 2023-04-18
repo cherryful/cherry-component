@@ -16,6 +16,14 @@ const props = withDefaults(defineProps<Props>(), {
   variant: 'bar',
 })
 
+const circleProgress = computed(() => {
+  return (251 / 100) * props.percentage
+})
+
+function isScoreActive(i: number) {
+  return (i - 1) * (100 / props.scoreLength) <= props.percentage
+}
+
 const colors = {
   primary: 'bg-primary-500 text-primary-500',
   secondary: 'bg-secondary-500 text-secondary-500',
@@ -24,14 +32,6 @@ const colors = {
   error: 'bg-error-500 text-error-500',
   success: 'bg-success-500 text-success-500',
   warning: 'bg-warning-500 text-warning-500',
-}
-
-const circleProgress = computed(() => {
-  return (251 / 100) * props.percentage
-})
-
-function isScoreActive(i: number) {
-  return (i - 1) * (100 / props.scoreLength) <= props.percentage
 }
 </script>
 

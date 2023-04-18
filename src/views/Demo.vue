@@ -13,7 +13,7 @@ import InputDemo from './InputDemo.vue'
 import PopoverDemo from './PopoverDemo.vue'
 
 import { useStore } from '@/store'
-import useMouseClick from '@/hooks/useMouse'
+import useMouseClick from '@/composables/useMouse'
 import api from '@/api'
 
 const store = useStore()
@@ -86,7 +86,7 @@ async function fetchSentence() {
       <AlertDemo />
       <InputDemo />
       <PopoverDemo />
+      <DrawerDemo />
     </div>
-    <DrawerDemo />
   </div>
 </template>

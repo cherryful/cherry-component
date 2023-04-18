@@ -25,6 +25,8 @@ Features:
 - Checkbox
 - Switch
 - Alert
+- Input
+- Modal
 - ...
 
 ## Github pages

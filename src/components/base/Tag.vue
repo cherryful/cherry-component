@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
-  type?: 'default' | 'success' | 'info' | 'warning' | 'error' | 'primary' | 'empty'
-  size?: 'sm' | 'base' | 'lg' | 'empty'
+  type?: 'default' | 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
+  size?: 'sm' | 'base' | 'lg'
   rounded?: 'sm' | 'base' | 'lg' | 'full'
   border?: boolean
   custom?: string
@@ -14,37 +14,31 @@ withDefaults(defineProps<Props>(), {
   border: false,
   custom: '',
 })
-
-const colors = {
-  empty: '',
-  default: 'bg-gray-100 text-gray-800',
-  success: 'bg-green-100 text-green-800',
-  info: 'bg-blue-100 text-blue-800',
-  warning: 'bg-yellow-100 text-yellow-800',
-  error: 'bg-red-100 text-red-800',
-  primary: 'bg-indigo-100 text-indigo-800',
-}
-
-const sizes = {
-  empty: '',
-  sm: 'px-2 py-1',
-  base: 'px-3 py-1.5',
-  lg: 'px-6 py-3',
-}
-
-const rounds = {
-  sm: 'rounded-sm',
-  base: 'rounded-md',
-  lg: 'rounded-lg',
-  full: 'rounded-full',
-}
 </script>
 
 <template>
   <div
-    class="inline-block text-xs shadow-sm whitespace-nowrap cursor-default font-medium duration-500"
-    :class="[colors[type], sizes[size], rounds[rounded], custom, {
+    class="inline-block text-xs shadow-sm whitespace-nowrap cursor-default font-medium"
+    :class="[custom, {
       'border border-gray-300': border,
+
+      'default': type === 'default',
+      'primary': type === 'primary',
+      'secondary': type === 'secondary',
+      'accent': type === 'accent',
+      'success': type === 'success',
+      'info': type === 'info',
+      'error': type === 'error',
+      'warning': type === 'warning',
+
+      'px-2 py-1': size === 'sm',
+      'px-3 py-1.5': size === 'base',
+      'px-6 py-3': size === 'lg',
+
+      'rounded-sm': rounded === 'sm',
+      'rounded-md': rounded === 'base',
+      'rounded-lg': rounded === 'lg',
+      'rounded-full': rounded === 'full',
     },
     ]"
   >
@@ -53,3 +47,30 @@ const rounds = {
     </div>
   </div>
 </template>
+
+<style scoped>
+.default {
+  @apply text-gray-800 bg-gray-100
+}
+.primary {
+  @apply bg-primary-100 text-primary-800
+}
+.secondary {
+  @apply bg-secondary-100 text-secondary-800
+}
+.accent {
+  @apply bg-accent-100 text-accent-800
+}
+.success {
+  @apply bg-success-100 text-success-800
+}
+.info {
+  @apply bg-info-100 text-info-800
+}
+.warning {
+  @apply bg-warning-100 text-warning-800
+}
+.error {
+  @apply bg-error-100 text-error-800
+}
+</style>
