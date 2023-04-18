@@ -13,13 +13,13 @@ import { colors } from 'unocss/preset-mini'
 export default defineConfig({
   theme: {
     colors: {
+      primary: colors.indigo,
+      secondary: colors.teal,
+      accent: colors.pink,
       success: colors.green,
       info: colors.blue,
       warning: colors.yellow,
       error: colors.red,
-      primary: colors.indigo,
-      secondary: colors.teal,
-      accent: colors.pink,
     },
   },
   shortcuts: [
