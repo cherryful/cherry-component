@@ -1,0 +1,1 @@
+import{_ as o,P as t,a as s,g as a,j as c,k as n,e as r}from"./index-c5691a33.js";const _={},l={class:"m-5"},d=r("button",{class:"btn"}," Back Demo Page ",-1);function i(m,f){const e=t("RouterLink");return s(),a("div",l,[c(e,{to:"/"},{default:n(()=>[d]),_:1})])}const k=o(_,[["render",i]]);export{k as default};
