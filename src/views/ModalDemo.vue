@@ -9,7 +9,7 @@ const show = ref(false)
   <button class="btn" @click="show = true">
     TailwindUI Modal
   </button>
-  <Modal v-model:show="show">
+  <Modal v-model="show">
     <template #header>
       Header
     </template>
