@@ -4,7 +4,7 @@ import Divider from '@/components/base/Divider.vue'
 
 <template>
   <Divider />
-  <Divider class="my-5 bg-red" dashed />
+  <Divider dashed />
   <Divider align="left">
     Left
   </Divider>
