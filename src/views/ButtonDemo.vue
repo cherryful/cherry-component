@@ -56,15 +56,18 @@ import Button from '@/components/base/Button.vue'
         disabled
       </Button>
     </div>
-    <div class="space-x-3 space-y-3 flex items-center">
+    <div class="space-x-3 flex items-center">
       <span class="inline-block w-20">
         icon:
       </span>
       <Button>
-        <div class="f-c-c">
+        <div class="flex items-center justify-center">
           <span class="i-mdi:lightning-bolt text-4" />
           <span> Lightning </span>
         </div>
+      </Button>
+      <Button text>
+        text
       </Button>
     </div>
     <div class="space-x-3 space-y-3">

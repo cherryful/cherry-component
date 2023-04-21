@@ -11,9 +11,8 @@ import DrawerDemo from './DrawerDemo.vue'
 import AlertDemo from './AlertDemo.vue'
 import InputDemo from './InputDemo.vue'
 import PopoverDemo from './PopoverDemo.vue'
-import SteppersDemo from './SteppersDemo.vue'
+import DividerDemo from './DividerDemo.vue'
 
-import TabDemo from './TabDemo.vue'
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
 import api from '@/api'
@@ -88,9 +87,10 @@ async function fetchSentence() {
       <AlertDemo />
       <InputDemo />
       <PopoverDemo />
-      <SteppersDemo />
       <DrawerDemo />
-      <TabDemo />
+      <!-- <SteppersDemo /> -->
+      <!-- <TabDemo /> -->
+      <DividerDemo />
     </div>
   </div>
 </template>
