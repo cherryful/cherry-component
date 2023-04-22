@@ -1,0 +1,1 @@
+import{_ as o,S as t,o as s,f as c,i as n,j as a,b as r}from"./index-f3005cac.js";const _={},l={class:"m-5"},d=r("button",{class:"btn"}," Back Demo Page ",-1);function i(f,m){const e=t("RouterLink");return s(),c("div",l,[n(e,{to:"/"},{default:a(()=>[d]),_:1})])}const p=o(_,[["render",i]]);export{p as default};
