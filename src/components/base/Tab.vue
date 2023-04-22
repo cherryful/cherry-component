@@ -68,7 +68,7 @@ const Render = () => {
         @click="flux.selectTab(tab, idx)"
       >
         {{ tab?.title }}
-        <div class="i-fa-close w-3 h-3 ml-3" />
+        <slot name="icon" />
       </div>
     </div>
     <div class="p-4">
