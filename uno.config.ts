@@ -32,7 +32,6 @@ export default defineConfig({
     presetUno(),
     presetForms(),
     presetIcons({
-      // scale: 1.2,
       warn: true,
       extraProperties: {
         // cursor: 'pointer',

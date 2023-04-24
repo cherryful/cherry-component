@@ -13,9 +13,10 @@ import InputDemo from './InputDemo.vue'
 import PopoverDemo from './PopoverDemo.vue'
 import DividerDemo from './DividerDemo.vue'
 import TabDemo from './TabDemo.vue'
-
 import BadgeDemo from './BadgeDemo.vue'
 import DropdownDemo from './DropdownDemo.vue'
+import SelectDemo from './SelectDemo.vue'
+
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
 import api from '@/api'
@@ -95,6 +96,7 @@ async function fetchSentence() {
       <TabDemo />
       <DividerDemo />
       <BadgeDemo />
+      <SelectDemo />
       <DropdownDemo />
     </div>
   </div>
