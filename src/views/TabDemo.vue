@@ -3,25 +3,20 @@ import { reactive } from 'vue'
 import Tab from '@/components/base/Tab.vue'
 
 const flux = reactive({
-  tabs1: 0,
-  tabs2: 'vue',
+  current: 0,
 })
 </script>
 
 <template>
   <Tab
-    v-model="flux.tabs1"
+    v-model="flux.current"
     class="my-4 bg-white dark:bg-slate-800 border dark:border-slate-600 rounded-lg"
   >
-    <template #icon>
-      <div class="i-mdi:lightning-bolt text-xl" />
-    </template>
-    <div title="Vue">
-      <div>Vue Content</div>
+    <div title="Vue" icon="i-mdi:lightning-bolt">
+      <div>Vue Content</div> {{ flux.current }}
     </div>
-
-    <div title="React">
-      <div>React Content</div>
+    <div title="React" icon="i-mdi:abacus">
+      <div>React Content</div> {{ flux.current }}
     </div>
   </Tab>
 </template>

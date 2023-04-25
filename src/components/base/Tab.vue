@@ -59,16 +59,15 @@ const Render = () => {
   <div class="w-full p-4">
     <div class="flex items-center">
       <div
-        v-for="(tab, idx) in flux.tab"
-        :key="idx"
+        v-for="(tab, idx) in flux.tab" :key="idx"
         class="tab"
         :class="{
           active: flux.activeTab(tab, idx) === modelValue,
         }"
         @click="flux.selectTab(tab, idx)"
       >
-        {{ tab?.title }}
-        <slot name="icon" />
+        <span> {{ tab?.title }} </span>
+        <span class="inline-block w-5 h-5 ml-2" :class="tab?.icon" />
       </div>
     </div>
     <div class="p-4">

@@ -32,6 +32,7 @@ Features:
 - Badge
 - Dropdown
 - Popover
+- Loading
 - ...
 
 ## Github pages
