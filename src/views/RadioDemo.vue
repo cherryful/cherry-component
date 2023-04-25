@@ -2,13 +2,20 @@
 import { reactive } from 'vue'
 import Radio from '@/components/base/Radio.vue'
 
+// const flux = reactive({
+//   placementOptions: ['one', 'two', 'three', 'fours'],
+// })
 const flux = reactive({
-  placementOptions: ['one', 'two', 'three', 'fours'],
+  options: [
+    { id: 'email', title: 'Email' },
+    { id: 'sms', title: 'Phone (SMS)' },
+    { id: 'push', title: 'Push notification' },
+  ],
 })
 </script>
 
 <template>
   <div class="flex">
-    <Radio v-model:value="flux.placement" :options="flux.placementOptions" />
+    <Radio :options="flux.options" />
   </div>
 </template>

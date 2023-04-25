@@ -43,4 +43,10 @@ import Badge from '@/components/base/Badge.vue'
       <span class="text-xl"> update</span>
     </Badge>
   </div>
+  <div class="space-x-20">
+    <span>other:</span>
+    <Badge>
+      <span class="text-xl"> demo </span>
+    </Badge>
+  </div>
 </template>

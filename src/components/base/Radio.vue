@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<!-- <script lang="ts" setup>
 import { computed } from 'vue'
 import uniqueId from 'lodash/uniqueId'
 
@@ -73,4 +73,35 @@ const radioGroupValue = computed({
   @apply appearance-none w-5 h-5 rounded-full bg-white border border-slate-400 dark:border-slate-600;
   @apply focus:outline-none focus:ring-2 focus:ring-primary-400 focus:shadow-lg;
 }
-</style>
+</style> -->
+<script setup lang="ts">
+const props = defineProps<{
+  label?: string
+  options?: string[] | Array<{ label: string; value: unknown }>
+}>()
+
+const emit = defineEmits<{
+  (evt: 'update:value', val: unknown): void
+  (evt: 'change', val: unknown): void
+}>()
+</script>
+
+<template>
+  <div>
+    <label class="text-base font-semibold text-gray-900">Notifications</label>
+    <p class="text-sm text-gray-500">
+      How do you prefer to receive notifications?
+    </p>
+    <fieldset class="mt-4">
+      <legend class="sr-only">
+        Notification method
+      </legend>
+      <div class="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
+        <div v-for="(notificationMethod, index) in props.options" :key="index" class="flex items-center">
+          <input :id="notificationMethod.id" name="notification-method" type="radio" :checked="notificationMethod.id === 'email'" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+          <label :for="notificationMethod.id" class="ml-3 block text-sm font-medium leading-6 text-gray-900">{{ notificationMethod.title }}</label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</template>
