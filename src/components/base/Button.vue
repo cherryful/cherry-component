@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
   type?: 'default' | 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
-  size?: 'sm' | 'base' | 'lg' | 'empty'
+  size?: 'sm' | 'base' | 'lg'
   disabled?: boolean
   custom?: string
 }
@@ -24,15 +24,7 @@ withDefaults(defineProps<Props>(), {
     focus:outline-none focus:ring-2 focus:ring-offset-2
     disabled:cursor-not-allowed disabled:opacity-30
     sm:w-auto"
-    :class="[custom || {
-      'default': type === 'default',
-      'primary': type === 'primary',
-      'secondary': type === 'secondary',
-      'accent': type === 'accent',
-      'success': type === 'success',
-      'info': type === 'info',
-      'error': type === 'error',
-      'warning': type === 'warning',
+    :class="custom || [[type], {
       'px-2 py-1': size === 'sm',
       'px-3 py-2.5 sm:py-2': size === 'base',
       'px-10 py-4': size === 'lg',

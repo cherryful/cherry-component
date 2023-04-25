@@ -19,17 +19,8 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div
     class="inline-block text-xs shadow-sm whitespace-nowrap cursor-default font-medium"
-    :class="[custom || {
+    :class="custom || [[type], {
       'border border-gray-300': border,
-
-      'default': type === 'default',
-      'primary': type === 'primary',
-      'secondary': type === 'secondary',
-      'accent': type === 'accent',
-      'success': type === 'success',
-      'info': type === 'info',
-      'error': type === 'error',
-      'warning': type === 'warning',
 
       'px-2 py-1': size === 'sm',
       'px-3 py-1.5': size === 'base',

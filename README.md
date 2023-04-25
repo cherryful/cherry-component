@@ -27,6 +27,11 @@ Features:
 - Alert
 - Input
 - Modal
+- Select
+- Radio
+- Badge
+- Dropdown
+- Popover
 - ...
 
 ## Github pages

@@ -41,6 +41,12 @@ import Tag from '@/components/base/Tag.vue'
       <Tag type="primary">
         primary
       </Tag>
+      <Tag type="secondary">
+        primary
+      </Tag>
+      <Tag type="accent">
+        primary
+      </Tag>
     </div>
     <div class="space-x-3">
       <span class="inline-block w-20">
@@ -75,7 +81,7 @@ import Tag from '@/components/base/Tag.vue'
         icon:
       </span>
       <Tag>
-        <div class="f-c-c">
+        <div class="flex items-center justify-center">
           <span class="i-mdi:lightning-bolt text-4" />
           <span> Lightning </span>
         </div>
