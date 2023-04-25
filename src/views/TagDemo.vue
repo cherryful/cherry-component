@@ -75,7 +75,7 @@ import Tag from '@/components/base/Tag.vue'
         icon:
       </span>
       <Tag>
-        <div class="f-c-c">
+        <div class="flex items-center justify-center">
           <span class="i-mdi:lightning-bolt text-4" />
           <span> Lightning </span>
         </div>

@@ -28,27 +28,46 @@ const emit = defineEmits<{
 const uid = uniqueId('switch-')
 
 const switchValue = computed({
-  get: () => props.modelValue || false,
+  get: () => props.modelValue,
   set: val => emit('update:modelValue', val),
 })
 
-const colors = {
-  success: 'bg-success-500',
-  info: 'bg-info-500',
-  warning: 'bg-warning-500',
-  error: 'bg-error-500',
-  primary: 'bg-primary-500',
-  secondary: 'bg-secondary-500',
-  accent: 'bg-accent-500',
-}
-const textColors = {
-  success: 'text-success-500',
-  info: 'text-info-500',
-  warning: 'text-warning-500',
-  error: 'text-error-500',
-  primary: 'text-primary-500',
-  secondary: 'text-secondary-500',
-  accent: 'text-accent-500',
+const themes = {
+  success: {
+    color: 'bg-success-500',
+    text: 'text-success-500',
+    focus: 'focus:ring-success-500',
+  },
+  info: {
+    color: 'bg-info-500',
+    text: 'text-info-500',
+    focus: 'focus:ring-info-500',
+  },
+  warning: {
+    color: 'bg-warning-500',
+    text: 'text-warning-500',
+    focus: 'focus:ring-warning-500',
+  },
+  error: {
+    color: 'bg-error-500',
+    text: 'text-error-500',
+    focus: 'focus:ring-error-500',
+  },
+  primary: {
+    color: 'bg-primary-500',
+    text: 'text-primary-500',
+    focus: 'focus:ring-primary-500',
+  },
+  secondary: {
+    color: 'bg-secondary-500',
+    text: 'text-secondary-500',
+    focus: 'focus:ring-secondary-500',
+  },
+  accent: {
+    color: 'bg-accent-500',
+    text: 'text-accent-500',
+    focus: 'focus:ring-accent-500',
+  },
 }
 </script>
 
@@ -60,7 +79,9 @@ const textColors = {
       :class="[disabled ? 'cursor-not-allowed opacity-60' : readonly ? '' : 'cursor-pointer']"
     >
       <div
-        tabindex="0" class="relative focus:rounded-full focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none focus:ring-2"
+        tabindex="0"
+        class="relative focus:rounded-full focus:ring-offset-2 focus:outline-none focus:ring-2"
+        :class="[themes[type].focus]"
       >
         <input
           :id="uid"
@@ -78,7 +99,7 @@ const textColors = {
               'w-11 h-6': size === 'base',
               'w-14 h-9': size === 'lg',
             },
-            (switchValue || checked) ? colors[type] : 'bg-gray-200',
+            (switchValue || checked) ? themes[type].color : 'bg-gray-200',
           ]"
         />
 
@@ -97,7 +118,7 @@ const textColors = {
             v-if="icon"
             fill="currentColor" viewBox="0 0 12 12"
             :class="[
-              (checked || switchValue) ? textColors[type] : 'text-gray-200',
+              (checked || switchValue) ? themes[type].text : 'text-gray-200',
               {
                 'w-3 h-3': size === 'sm',
                 'h-5 w-5': size === 'base',
