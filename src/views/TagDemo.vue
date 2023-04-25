@@ -41,6 +41,12 @@ import Tag from '@/components/base/Tag.vue'
       <Tag type="primary">
         primary
       </Tag>
+      <Tag type="secondary">
+        primary
+      </Tag>
+      <Tag type="accent">
+        primary
+      </Tag>
     </div>
     <div class="space-x-3">
       <span class="inline-block w-20">
