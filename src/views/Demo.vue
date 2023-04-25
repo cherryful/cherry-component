@@ -5,6 +5,7 @@ import ModalDemo from './ModalDemo.vue'
 import ButtonDemo from './ButtonDemo.vue'
 import TagDemo from './TagDemo.vue'
 import CheckboxDemo from './CheckboxDemo.vue'
+import RadioDemo from './RadioDemo.vue'
 import ProgressDemo from './ProgressDemo.vue'
 import SwitchDemo from './SwitchDemo.vue'
 import DrawerDemo from './DrawerDemo.vue'
@@ -96,6 +97,7 @@ async function fetchSentence() {
       <DividerDemo />
       <BadgeDemo />
       <DropdownDemo />
+      <RadioDemo />
     </div>
   </div>
 </template>
