@@ -92,7 +92,6 @@ async function fetchSentence() {
       <InputDemo />
       <PopoverDemo />
       <DrawerDemo />
-      <!-- <SteppersDemo /> -->
       <TabDemo />
       <DividerDemo />
       <BadgeDemo />
