@@ -19,8 +19,9 @@ import DropdownDemo from './DropdownDemo.vue'
 import SelectDemo from './SelectDemo.vue'
 import LoadingDemo from './LoadingDemo.vue'
 import RadioGroupDemo from './RadioGroupDemo.vue'
-
 import CollapseDemo from './CollapseDemo.vue'
+import FileInputDemo from './FileInputDemo.vue'
+
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
 import api from '@/api'
@@ -105,6 +106,7 @@ async function fetchSentence() {
       <RadioDemo />
       <CollapseDemo />
       <RadioGroupDemo />
+      <FileInputDemo />
     </div>
   </div>
 </template>

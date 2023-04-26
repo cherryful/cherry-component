@@ -11,13 +11,15 @@ const props = withDefaults(defineProps<Props>(), {
   thickness: 8,
 })
 
-const wrapper = ref()
-const spinner = ref()
+const wrapper = ref<HTMLElement | null>(null)
+const spinner = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   nextTick(() => {
+    if (!wrapper.value || !spinner.value)
+      return
     const size = wrapper.value.getBoundingClientRect().width / props.thickness
-    spinner.value.style['border-width'] = `${size}px`
+    spinner.value.style.borderWidth = `${size}px`
   })
 })
 </script>

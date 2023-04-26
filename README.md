@@ -33,6 +33,9 @@ Features:
 - Dropdown
 - Popover
 - Loading
+- FileInput
+- Radio
+- Collapse
 - ...
 
 ## Github pages

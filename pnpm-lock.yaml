@@ -25,8 +25,8 @@ devDependencies:
     specifier: ^0.35.3
     version: 0.35.3(eslint@8.39.0)(typescript@4.9.5)
   '@iconify/json':
-    specifier: ^2.2.55
-    version: 2.2.55
+    specifier: ^2.2.56
+    version: 2.2.56
   '@julr/unocss-preset-forms':
     specifier: ^0.0.5
     version: 0.0.5(unocss@0.50.8)
@@ -34,38 +34,38 @@ devDependencies:
     specifier: ^4.14.194
     version: 4.14.194
   '@types/node':
-    specifier: ^18.16.0
-    version: 18.16.0
+    specifier: ^18.16.1
+    version: 18.16.1
   '@unocss/reset':
     specifier: ^0.50.8
     version: 0.50.8
   '@vitejs/plugin-vue':
-    specifier: ^4.1.0
-    version: 4.1.0(vite@4.3.1)(vue@3.2.47)
+    specifier: ^4.2.1
+    version: 4.2.1(vite@4.3.2)(vue@3.2.47)
   eslint:
     specifier: ^8.39.0
     version: 8.39.0
   pnpm:
-    specifier: ^7.32.2
-    version: 7.32.2
+    specifier: ^8.3.1
+    version: 8.3.1
   rollup-plugin-visualizer:
     specifier: ^5.9.0
     version: 5.9.0
   sass:
-    specifier: ^1.62.0
-    version: 1.62.0
+    specifier: ^1.62.1
+    version: 1.62.1
   taze:
-    specifier: ^0.9.1
-    version: 0.9.1
+    specifier: ^0.9.2
+    version: 0.9.2
   typescript:
     specifier: ^4.9.5
     version: 4.9.5
   unocss:
     specifier: ^0.50.8
-    version: 0.50.8(postcss@8.4.23)(vite@4.3.1)
+    version: 0.50.8(postcss@8.4.23)(vite@4.3.2)
   vite:
-    specifier: ^4.3.1
-    version: 4.3.1(@types/node@18.16.0)(sass@1.62.0)
+    specifier: ^4.3.2
+    version: 4.3.2(@types/node@18.16.1)(sass@1.62.1)
   vue-tsc:
     specifier: ^1.4.4
     version: 1.4.4(typescript@4.9.5)
@@ -183,8 +183,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /@antfu/ni@0.20.0:
-    resolution: {integrity: sha512-mBgAuq2b0daSA/14LMyjEjaInD7/Zd7KVXZge7bQPKmtQJFqy9/pWBml6DMkMreeHQEomMtIbbeqReNJ/74kjA==}
+  /@antfu/ni@0.21.3:
+    resolution: {integrity: sha512-iDtQMeMW1kKV4nzQ+tjYOIPUm6nmh7pJe4sM0kx1jdAChKSCBLStqlgIoo5Tce++p+o8cBiWIzC3jg6oHyjzMA==}
     hasBin: true
     dev: true
 
@@ -494,8 +494,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json@2.2.55:
-    resolution: {integrity: sha512-o2niVFsObVssJUsnF0wLYuoqiddDRL0j6t9ZyGN+j4b2FE5La6sln/LHxIix5mAZfLlJ54WTp+N+5ovVkjIgXQ==}
+  /@iconify/json@2.2.56:
+    resolution: {integrity: sha512-OVW7Bt/Gzgb1UO5zFzM8enzIOWHyLXp3LVfMq0LtyxloxPqRCEJ5UGVzk+EcwEOsX3q1lMqMhkVY/EqAaqr52Q==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.0
@@ -559,7 +559,7 @@ packages:
       unocss: '>= 0.31.13 < 1'
     dependencies:
       mini-svg-data-uri: 1.4.4
-      unocss: 0.50.8(postcss@8.4.23)(vite@4.3.1)
+      unocss: 0.50.8(postcss@8.4.23)(vite@4.3.2)
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -725,8 +725,8 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/node@18.16.0:
-    resolution: {integrity: sha512-BsAaKhB+7X+H4GnSjGhJG9Qi8Tw+inU9nJDwmD5CgOmBLEI6ArdhikpLX7DjbjDRDTbqZzU2LSQNZg8WGPiSZQ==}
+  /@types/node@18.16.1:
+    resolution: {integrity: sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -875,12 +875,12 @@ packages:
       eslint-visitor-keys: 3.4.0
     dev: true
 
-  /@unocss/astro@0.50.8(vite@4.3.1):
+  /@unocss/astro@0.50.8(vite@4.3.2):
     resolution: {integrity: sha512-kphNlr0PWGzvkCgKx7RaZWQ45khieCCt9OffUnxbRRft+jodsVXIwzHn+bOhGtIKpEpZiOzxRzTYjfW/R6XnTw==}
     dependencies:
       '@unocss/core': 0.50.8
       '@unocss/reset': 0.50.8
-      '@unocss/vite': 0.50.8(vite@4.3.1)
+      '@unocss/vite': 0.50.8(vite@4.3.2)
     transitivePeerDependencies:
       - rollup
       - vite
@@ -1037,7 +1037,7 @@ packages:
       '@unocss/core': 0.50.8
     dev: true
 
-  /@unocss/vite@0.50.8(vite@4.3.1):
+  /@unocss/vite@0.50.8(vite@4.3.2):
     resolution: {integrity: sha512-pHk7D0jHAlBUKSp0y0dMuKesLSSv1O0fTNewUAz1NUpISTno3zizuKSpRs8OzCFInta6QeAVSaWe8K69PcfFog==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -1052,19 +1052,19 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.3.1(@types/node@18.16.0)(sass@1.62.0)
+      vite: 4.3.2(@types/node@18.16.1)(sass@1.62.1)
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /@vitejs/plugin-vue@4.1.0(vite@4.3.1)(vue@3.2.47):
-    resolution: {integrity: sha512-++9JOAFdcXI3lyer9UKUV4rfoQ3T1RN8yDqoCLar86s0xQct5yblxAE+yWgRnU5/0FOlVCpTZpYSBV/bGWrSrQ==}
+  /@vitejs/plugin-vue@4.2.1(vite@4.3.2)(vue@3.2.47):
+    resolution: {integrity: sha512-ZTZjzo7bmxTRTkb8GSTwkPOYDIP7pwuyV+RV53c9PYUouwcbkIZIvWvNWlX2b1dYZqtOv7D6iUAnJLVNGcLrSw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.1(@types/node@18.16.0)(sass@1.62.0)
+      vite: 4.3.2(@types/node@18.16.1)(sass@1.62.1)
       vue: 3.2.47
     dev: true
 
@@ -3716,9 +3716,9 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@7.32.2:
-    resolution: {integrity: sha512-PfosE4b8keWHVrO+z4d+ncIIQK9ypTAdRTrk2ioZ2wDN0I9L+mapzJVldVqsZdy7vakyMtxfknN2cn5wjESbvg==}
-    engines: {node: '>=14.6'}
+  /pnpm@8.3.1:
+    resolution: {integrity: sha512-0mT2ZAv08J3nz8xUdWhRW88GE89IWgPo/xZhb6acQXK2+aCikl7kT7Bg31ZcnJqOrwYXSed68xjLd/ZoSnBR8w==}
+    engines: {node: '>=16.14'}
     hasBin: true
     dev: true
 
@@ -3963,8 +3963,8 @@ packages:
     dev: true
     optional: true
 
-  /sass@1.62.0:
-    resolution: {integrity: sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg==}
+  /sass@1.62.1:
+    resolution: {integrity: sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4207,11 +4207,11 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /taze@0.9.1:
-    resolution: {integrity: sha512-qAsoDbGyi4syl3oQwa8NOIIZu5XYKag+0496D0HMjmDEJoNqyTZeFre7gWJ2de+6Rvf977ISHPm5bdvvBF3Dlg==}
+  /taze@0.9.2:
+    resolution: {integrity: sha512-gsO2YZ7/6oke9iIo8BpsjoxX3hjfbi0TFDen5Fc22YDgx/W1KUeU+ZK4rB5Y4285egWYeoDLmZOQvlWzUcASjw==}
     hasBin: true
     dependencies:
-      '@antfu/ni': 0.20.0
+      '@antfu/ni': 0.21.3
       '@npmcli/config': 6.1.6
       detect-indent: 7.0.1
       pacote: 13.6.2
@@ -4343,7 +4343,7 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /unocss@0.50.8(postcss@8.4.23)(vite@4.3.1):
+  /unocss@0.50.8(postcss@8.4.23)(vite@4.3.2):
     resolution: {integrity: sha512-3yqKkSm/SKCKxFolXNR12Mi64lr4PW95LSHKZ/a9Yzlf2PT1NirAn8/uJ8KoJJBNR2YWobtkLi4UplFz/8IAYA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4352,7 +4352,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.50.8(vite@4.3.1)
+      '@unocss/astro': 0.50.8(vite@4.3.2)
       '@unocss/cli': 0.50.8
       '@unocss/core': 0.50.8
       '@unocss/postcss': 0.50.8(postcss@8.4.23)
@@ -4370,7 +4370,7 @@ packages:
       '@unocss/transformer-compile-class': 0.50.8
       '@unocss/transformer-directives': 0.50.8
       '@unocss/transformer-variant-group': 0.50.8
-      '@unocss/vite': 0.50.8(vite@4.3.1)
+      '@unocss/vite': 0.50.8(vite@4.3.2)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -4402,8 +4402,8 @@ packages:
       builtins: 5.0.1
     dev: true
 
-  /vite@4.3.1(@types/node@18.16.0)(sass@1.62.0):
-    resolution: {integrity: sha512-EPmfPLAI79Z/RofuMvkIS0Yr091T2ReUoXQqc5ppBX/sjFRhHKiPPF/R46cTdoci/XgeQpB23diiJxq5w30vdg==}
+  /vite@4.3.2(@types/node@18.16.1)(sass@1.62.1):
+    resolution: {integrity: sha512-9R53Mf+TBoXCYejcL+qFbZde+eZveQLDYd9XgULILLC1a5ZwPaqgmdVpL8/uvw2BM/1TzetWjglwm+3RO+xTyw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4427,11 +4427,11 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.16.0
+      '@types/node': 18.16.1
       esbuild: 0.17.18
       postcss: 8.4.23
       rollup: 3.21.0
-      sass: 1.62.0
+      sass: 1.62.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
