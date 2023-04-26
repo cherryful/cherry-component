@@ -67,16 +67,21 @@ const emit = defineEmits<{
           <div class="flex items-center justify-between w-full">
             <span class="block text-sm font-medium text-gray-900">option.title</span>
             <span class="flex items-center">
-              <input :id="notificationMethod.id" name="notification-method" type="radio" :checked="notificationMethod.id === 'email'" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-              <!-- <label :for="notificationMethod.id" class="ml-3 block text-sm font-medium leading-6 text-gray-900">{{ notificationMethod.title }}</label> -->
+              <input
+                :id="notificationMethod.id"
+                name="notification-method" type="radio"
+                :checked="notificationMethod.id === 'email'"
+                class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 "
+              >
+              <label :for="notificationMethod.id" class="ml-3 block text-sm font-medium leading-6 text-gray-900">{{ notificationMethod.title }}</label>
               <!--     checked ? themes[type].text : 'text-gray-200', -->
-              <svg
-                v-if="icon"
+              <!-- <svg
+
                 fill="currentColor" viewBox="0 0 12 12"
               >
                 <path v-if="checked" d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z" />
                 <path v-else d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              </svg> -->
             </span>
           </div>
 
