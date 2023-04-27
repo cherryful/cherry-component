@@ -36,6 +36,7 @@ Features:
 - FileInput
 - Radio
 - Collapse
+- Toast
 - ...
 
 ## Github pages

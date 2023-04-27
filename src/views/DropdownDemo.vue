@@ -21,6 +21,10 @@ const options: DropdownOption[] = [
     icon: h('div', { class: 'i-mdi:abacus text-red-500' }),
   },
 ]
+
+function select(val: DropdownOption) {
+  alert(val.key)
+}
 </script>
 
 <template>
@@ -29,9 +33,24 @@ const options: DropdownOption[] = [
       Basic
     </div>
 
-    <div class="flex justify-center">
+    <div class="gap-x-4 flex justify-center">
       <Dropdown :options="options">
-        <Button>Button</Button>
+        <Button>Base</Button>
+      </Dropdown>
+      <Dropdown :options="options" @select="select">
+        <Button>@select</Button>
+      </Dropdown>
+      <Dropdown :options="options">
+        <Button>options slot</Button>
+        <template #options>
+          <div
+            v-for="option of options" :key="option.key"
+            class="mx-1 px-2 py-1 hover:bg-amber-500 cursor-pointer rounded-md"
+            @click="select(option)"
+          >
+            {{ option.label }}
+          </div>
+        </template>
       </Dropdown>
     </div>
   </div>

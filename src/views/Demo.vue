@@ -18,9 +18,9 @@ import BadgeDemo from './BadgeDemo.vue'
 import DropdownDemo from './DropdownDemo.vue'
 import SelectDemo from './SelectDemo.vue'
 import LoadingDemo from './LoadingDemo.vue'
-import RadioGroupDemo from './RadioGroupDemo.vue'
 import CollapseDemo from './CollapseDemo.vue'
 import FileInputDemo from './FileInputDemo.vue'
+import ToastDemo from './ToastDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
@@ -105,8 +105,8 @@ async function fetchSentence() {
       <LoadingDemo />
       <RadioDemo />
       <CollapseDemo />
-      <RadioGroupDemo />
       <FileInputDemo />
+      <ToastDemo />
     </div>
   </div>
 </template>
