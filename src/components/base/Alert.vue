@@ -41,16 +41,9 @@ const computedIcon = computed(() => {
 
 <template>
   <div
+    v-bind="$attrs"
     class="flex justify-between max-w-100 p-4 rounded-lg border border-current"
-    :class="{
-      primary: type === 'primary' || !type,
-      secondary: type === 'secondary',
-      accent: type === 'accent',
-      success: type === 'success',
-      info: type === 'info',
-      warning: type === 'warning',
-      error: type === 'error',
-    }"
+    :class="[[type]]"
   >
     <div class="flex">
       <div v-if="!noIcon">

@@ -11,40 +11,35 @@ interface Event {
 
 const props = withDefaults(defineProps<{
   show?: false
-  position?: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
-  timout?: number
+  position?: 'top' | 'bottom'
+  align?: 'left' | 'center' | 'right'
+  timeout?: number
   queue?: boolean
 }>(), {
   position: 'top',
-  timout: 2500,
+  align: 'center',
+  timeout: 2500,
   queue: true,
 })
 
 const flux = reactive({
   events: [] as Event[],
-  success: (content: string) => {
-    flux.add(content, 'success')
-  },
-  info: (content: string) => {
-    flux.add(content, 'info')
-  },
-  warning: (content: string) => {
-    flux.add(content, 'warning')
-  },
-  error: (content: string) => {
-    flux.add(content, 'error')
-  },
+  success: (content: string) => flux.add(content, 'success'),
+  info: (content: string) => flux.add(content, 'info'),
+  warning: (content: string) => flux.add(content, 'warning'),
+  error: (content: string) => flux.add(content, 'error'),
   show: (content: string, type: 'success' | 'info' | 'warning' | 'error') => {
     flux.add(content, type)
   },
   add: (content: string, type: 'success' | 'info' | 'warning' | 'error') => {
     if (!props.queue)
       flux.events = []
+
     setTimeout(() => {
       const event = { id: Date.now(), content, type }
       flux.events.push(event)
-      setTimeout(() => flux.remove(event), props.timout)
-    }, 10)
+      setTimeout(() => flux.remove(event), props.timeout)
+    }, 100)
   },
   remove: (event: Event) => {
     flux.events = flux.events.filter(e => e.id !== event.id)
@@ -61,26 +56,23 @@ defineExpose({
 </script>
 
 <template>
-  <div
-    class="fixed w-full z-40 sm:w-96"
+  <TransitionGroup
+    tag="div"
+    class="grid gap-2 fixed z-200 sm:min-w-96"
     :class="{
-      'bottom-0': position === 'bottom',
-      'top-0': position === 'top',
+      'left-1/2 -translate-x-1/2': align === 'center',
+      'left-12': align === 'left',
+      'right-12': align === 'right',
+      'top-12': position === 'top',
+      'bottom-12 ': position === 'bottom',
     }"
   >
-    <!-- TODO: animation -->
-    <TransitionGroup
-      tag="div"
-      name="list"
-      class="grid gap-4 fixed left-1/2 top-12 -translate-x-1/2 z-200"
-    >
-      <Alert
-        v-for="event in flux.events"
-        :key="event.id"
-        :type="event.type"
-      >
-        {{ event.content }}
-      </Alert>
-    </TransitionGroup>
-  </div>
+    <div v-for="event in flux.events" :key="event.id">
+      <slot :type="event.type">
+        <Alert :type="event.type">
+          {{ event.content }}
+        </alert>
+      </slot>
+    </div>
+  </TransitionGroup>
 </template>
