@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.3",
-    "@iconify/json": "^2.2.56",
+    "@iconify/json": "^2.2.57",
     "@julr/unocss-preset-forms": "^0.0.5",
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.16.2",

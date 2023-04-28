@@ -25,8 +25,8 @@ devDependencies:
     specifier: ^0.35.3
     version: 0.35.3(eslint@8.39.0)(typescript@4.9.5)
   '@iconify/json':
-    specifier: ^2.2.56
-    version: 2.2.56
+    specifier: ^2.2.57
+    version: 2.2.57
   '@julr/unocss-preset-forms':
     specifier: ^0.0.5
     version: 0.0.5(unocss@0.50.8)
@@ -494,8 +494,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json@2.2.56:
-    resolution: {integrity: sha512-OVW7Bt/Gzgb1UO5zFzM8enzIOWHyLXp3LVfMq0LtyxloxPqRCEJ5UGVzk+EcwEOsX3q1lMqMhkVY/EqAaqr52Q==}
+  /@iconify/json@2.2.57:
+    resolution: {integrity: sha512-gOS/2y0ekLfCP7O1t5n3M4qFa9jVLUzvCA+d7atHnN0SCKLRj6UoB0DWK0n0rOWsK0cpyTNSJP8XEO1Oj0Z0fA==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.0
