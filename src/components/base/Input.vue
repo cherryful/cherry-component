@@ -53,7 +53,7 @@ const flux = reactive({
     <div class="flex w-full items-center">
       <div
         v-if="preIcon"
-        class="p-2 border border-slate-400 border-r-0 rounded rounded-r-0 bg-white dark:bg-slate-800 z-1"
+        class="p-2 border border-slate-400 border-r-0 rounded rounded-r-none bg-white dark:bg-slate-800 z-1"
         :class="{
           'important:border-red-500 important:ring-red-500 mb-1': errorMessage,
         }"
@@ -84,7 +84,7 @@ const flux = reactive({
       >
       <div
         v-if="suffIcon"
-        class="p-2 border border-slate-400 border-l-0 rounded rounded-l-0 bg-white dark:bg-slate-800 z-1;"
+        class="p-2 border border-slate-400 border-l-0 rounded rounded-l-none bg-white dark:bg-slate-800 z-1;"
         :class="{
           'important:border-red-500 important:ring-red-500 mb-1': errorMessage,
         }"
@@ -117,10 +117,10 @@ const flux = reactive({
     @apply focus:ring-red-500 focus:border-red-500;
   }
   &.prepend {
-    @apply rounded-l-0;
+    @apply rounded-l-none;
   }
   &.append {
-    @apply rounded-r-0;
+    @apply rounded-r-none;
   }
 }
 </style>

@@ -31,7 +31,7 @@ onUnmounted(() => {
   <Teleport to="body">
     <div
       v-bind="$attrs"
-      class="fixed z-102 overflow-y-auto bg-white transition-all"
+      class="fixed z-50 overflow-y-auto bg-white transition-all"
       :class="{
         'w-80 h-screen': placement === 'right' || placement === 'left',
         'top-0 -left-80': placement === 'left' && !modelValue,
@@ -49,7 +49,7 @@ onUnmounted(() => {
     </div>
     <div
       v-if="modelValue"
-      class="fixed inset-0 z-101"
+      class="fixed inset-0 z-40"
       aria-hidden="true"
       @click="close"
     >

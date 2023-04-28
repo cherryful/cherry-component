@@ -40,7 +40,7 @@ useDOMScrollLock(toRef(props, 'modelValue') as Ref<boolean>)
 <template>
   <Teleport to="body">
     <div
-      class="fixed z-11 inset-0 overflow-y-auto transition-all ease-in"
+      class="fixed z-30 inset-0 overflow-y-auto transition-all ease-in"
       :class="[
         isOpen ? 'visible' : 'invisible ease-in duration-100',
       ]"

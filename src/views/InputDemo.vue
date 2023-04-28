@@ -6,14 +6,14 @@ const value = ref()
 </script>
 
 <template>
-  <div class="w-70">
+  <div class="w-72">
     <Input v-model:value="value" placeholder="Custom placeholder" label="placeholder" />
     <Input v-model:value="value" label="required" required />
     <Input v-model:value="value">
       Template:
     </Input>
   </div>
-  <div class="w-70 space-y-3">
+  <div class="w-72 space-y-3">
     <Input
       v-model:value="value"
       label="pre-icon & suff-icon"
@@ -30,7 +30,7 @@ const value = ref()
     </Input>
     <Input v-model:value="value" error-message="oh!!!!" label="error-message" />
   </div>
-  <div class="w-70">
+  <div class="w-72">
     <Input v-model:value="value" @keyup.enter="value = 'type enter!'" />
   </div>
 </template>

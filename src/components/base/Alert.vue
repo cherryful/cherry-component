@@ -42,7 +42,7 @@ const computedIcon = computed(() => {
 <template>
   <div
     v-bind="$attrs"
-    class="flex justify-between max-w-100 p-4 rounded-lg border border-current"
+    class="flex justify-between max-w-lg p-4 rounded-lg border border-current"
     :class="[[type]]"
   >
     <div class="flex">

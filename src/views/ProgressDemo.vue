@@ -15,35 +15,35 @@ setInterval(() => {
   <div class="space-y-6">
     <div class="space-y-6">
       Color:
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="primary" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="secondary" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="accent" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="success" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="info" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="warning" :percentage="percentage" />
       </div>
-      <div class="w-30">
+      <div class="w-32">
         <Progress color="error" :percentage="percentage" />
       </div>
     </div>
     <div class="space-y-6 space-x-5">
       Varient:
-      <div class="w-30">
+      <div class="w-32">
         <Progress :percentage="percentage" variant="circle" />
       </div>
 
-      <div class="w-30">
+      <div class="w-32">
         <Progress :percentage="percentage" variant="score" />
       </div>
     </div>

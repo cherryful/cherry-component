@@ -11,13 +11,13 @@ function afterUpload(event: Event) {
 
 <template>
   <div class="my-4 flex items-center space-x-5">
-    <div class="w-70">
+    <div class="w-72">
       <FileInput
         v-model:file-list="fileList"
         @change="afterUpload"
       />
     </div>
-    <div class="w-70">
+    <div class="w-72">
       <FileInput
         v-model:file-list="fileList"
         multiple
