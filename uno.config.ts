@@ -28,13 +28,7 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetForms(),
-    presetIcons({
-      warn: true,
-      extraProperties: {
-        // cursor: 'pointer',
-        // display: 'inline-block',
-      },
-    }),
+    presetIcons(),
     presetWebFonts({
       provider: 'bunny',
       fonts: {

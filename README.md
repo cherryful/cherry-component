@@ -1,5 +1,7 @@
 # vue3-unocss-component-starter
 
+Perhaps you don't need a component library, the implementation of most components is very simple. This project strives to ensure that each component only requires one. vue file and does not introduce too many dependencies.
+
 Features:
 
 - 🛠 [Vue 3](https://v3.vuejs.org/guide/introduction.html)
@@ -12,7 +14,7 @@ Features:
 - 📄 [Github pages action](https://pages.github.com)
 - 🦾 TypeScript
 - 🧲 Fetch API
-- ⭐️ Basic Components based on headlessui
+- ⭐️ Basic Components
 - [antfu/eslint-config](https://github.com/antfu/eslint-config)
 
 ## Basic Component
@@ -37,6 +39,7 @@ Features:
 - Radio
 - Collapse
 - Toast
+- Skeleton
 - ...
 
 ## Github pages
