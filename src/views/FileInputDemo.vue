@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import FileInput from '@/components/base/FileInput.vue'
 
-const fileList = ref<any>([])
+const fileList = ref<any[]>([])
 
 function afterUpload(event: Event) {
   console.log('File uploaded', event)
