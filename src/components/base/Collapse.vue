@@ -1,36 +1,84 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 
-interface Props {
-  collapse?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  collapse: false,
+const props = withDefaults(defineProps<{
+  expanded?: boolean
+  disabled?: boolean
+  iconLeft?: boolean
+}>(), {
+  expanded: false,
+  disabled: false,
+  iconLeft: false,
 })
 
-const openCollapse = ref(props.collapse)
-function changeCollapse() {
-  setTimeout(() => {
-    openCollapse.value = !openCollapse.value
-    const a = document.getElementById('content')
-    console.log(a)
-  }, 200)
-}
+const content = ref<HTMLElement | null>(null)
+
+const flux = reactive({
+  collapsed: !props.expanded,
+  expandedCompleted: false,
+  maxHeight: 0,
+  toggleExpand() {
+    if (props.disabled)
+      return
+
+    flux.expandedCompleted = false
+
+    if (flux.collapsed) {
+      setTimeout(() => {
+        flux.expandedCompleted = true
+      }, 300)
+    }
+
+    flux.collapsed = !flux.collapsed
+    flux.resizeContent()
+  },
+  resizeContent() {
+    flux.maxHeight = flux.collapsed ? 0 : (content.value?.offsetHeight || 0)
+  },
+})
+
+onMounted(() => flux.resizeContent())
 </script>
 
 <template>
-  <div class="p-4 border border-gray-100 rounded-md w-80">
-    <div class="flex justify-between" @click=" changeCollapse">
-      <p> <slot name="title" /></p>
-      <div class="transition duration-300 ease-in-out" :class="openCollapse ? ' transform rotate-180' : 'transform-none'">
+  <div class="p-4 border border-gray-100 rounded-md">
+    <div
+      class="flex items-center"
+      :class="[
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer',
+        {
+          'flex-row-reverse': iconLeft,
+        },
+      ]"
+      @click="flux.toggleExpand"
+    >
+      <div class="flex-1">
+        <slot />
+      </div>
+      <div
+        class="transition duration-200 ease-in-out transform transition-transform"
+        :class="[
+          iconLeft ? 'mr-2' : 'ml-2',
+          {
+            'rotate-180': !flux.collapsed,
+          },
+        ]"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5  text-gray-500">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </div>
     </div>
-    <div class="duration-300 ease-in-out transform translate-y-6 " :class="openCollapse ? 'block' : 'hidden h-0'">
-      <slot id="content" name="content" />
+    <div
+      class="transition-all duration-300 ease-in-out"
+      :class=" {
+        'overflow-y-hidden': !flux.expandedCompleted,
+      }"
+      :style="{ maxHeight: `${flux.maxHeight}px` }"
+    >
+      <div ref="content">
+        <slot name="content" />
+      </div>
     </div>
   </div>
 </template>

@@ -21,8 +21,10 @@ const dropdown = ref()
 
 const flux = reactive({
   status: false,
+  timeout: undefined as ReturnType<typeof setTimeout> | undefined,
   onMouseenter() {
     flux.status = true
+    clearTimeout(flux.timeout)
 
     nextTick(() => {
       const rect = target.value.getBoundingClientRect()
@@ -40,11 +42,13 @@ const flux = reactive({
     })
   },
   onMouseleave() {
-    setTimeout(() => flux.status = false, 250)
+    flux.timeout = setTimeout(() => flux.status = false, 250)
   },
 
   select(option: DropdownOption) {
     flux.status = false
+    flux.timeout = undefined
+
     emit('select', option)
   },
 })

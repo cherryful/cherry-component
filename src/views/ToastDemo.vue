@@ -44,12 +44,12 @@ const align = ref<'left' | 'center' | 'right'>('center')
   <Toast ref="toast4" :position="position" :align="align" />
 
   <div class="space-y-4">
-    <div class="space-x-4">
+    <div class="space-y-2 sm:space-x-4">
       <Button @click="toast1?.info('This is a no queue toast.')">
         Toast1: no-queue, timeout-1000
       </Button>
     </div>
-    <div class="space-x-4">
+    <div class="space-y-2 sm:space-x-4">
       <Button
         type="success"
         @click="($refs.toast2 as ToastCtx)?.success('This is a custom toast.')"
@@ -75,7 +75,7 @@ const align = ref<'left' | 'center' | 'right'>('center')
         Toast2: Custom Slot
       </Button>
     </div>
-    <div class="space-x-4">
+    <div class="space-y-2 sm:space-x-4">
       <Button
         type="success"
         @click="($refs.toast3 as ToastCtx).success('This is a warning toast.')"
@@ -101,7 +101,7 @@ const align = ref<'left' | 'center' | 'right'>('center')
         Toast3: Error
       </Button>
     </div>
-    <div class="space-x-4">
+    <div class="space-y-2 sm:space-x-4">
       <Button
         type="secondary"
         @click="
