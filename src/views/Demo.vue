@@ -22,6 +22,7 @@ import CollapseDemo from './CollapseDemo.vue'
 import FileInputDemo from './FileInputDemo.vue'
 import ToastDemo from './ToastDemo.vue'
 import SkeletonDemo from './SkeletonDemo.vue'
+import TableDemo from './TableDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
@@ -109,6 +110,7 @@ async function fetchSentence() {
       <FileInputDemo />
       <ToastDemo />
       <SkeletonDemo />
+      <TableDemo />
     </div>
   </div>
 </template>
