@@ -51,41 +51,37 @@ const indeterminate = computed(() => {
                     type="checkbox" class="checkbox"
                     :checked="data.length > 0 && selectIds.length === data.length"
                     :indeterminate="indeterminate"
-                    @change="selectIds = $event.target.checked ? data.map((p) => p.id) : []"
+                    @change="selectIds = ($event?.target as any).checked ? data.map((p) => p.id) : []"
                   >
                 </th>
                 <slot name="headers" />
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white overflow-x-auto">
-              <template v-if="loading">
-                <tr>
-                  <td :colspan="99">
-                    <div class="w-full flex items-center justify-center opacity-90 h-32">
-                      <template v-if="$slots.loading">
-                        <slot name="loading" />
-                      </template>
-                      <template v-else>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><rect width="6" height="14" x="1" y="4" fill="#888888"><animate id="svgSpinnersBarsScaleFade0" fill="freeze" attributeName="y" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="1;.2" /></rect><rect width="6" height="14" x="9" y="4" fill="currentColor" opacity=".4"><animate fill="freeze" attributeName="y" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="1;.2" /></rect><rect width="6" height="14" x="17" y="4" fill="currentColor" opacity=".3"><animate id="svgSpinnersBarsScaleFade1" fill="freeze" attributeName="y" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="1;.2" /></rect></svg>
-                      </template>
-                    </div>
-                  </td>
-                </tr>
-              </template>
-              <template v-else-if="data.length === 0">
-                <tr>
-                  <td :colspan="99">
-                    <div class="flex items-center justify-center min-h-32">
-                      <template v-if="$slots.empty">
-                        <slot name="empty" />
-                      </template>
-                      <template v-else>
-                        <div class="i-simple-icons:protodotio text-5xl text-gray-400 select-none" />
-                      </template>
-                    </div>
-                  </td>
-                </tr>
-              </template>
+              <tr v-if="loading">
+                <td :colspan="99">
+                  <div class="w-full flex items-center justify-center opacity-90 h-32">
+                    <template v-if="$slots.loading">
+                      <slot name="loading" />
+                    </template>
+                    <template v-else>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><rect width="6" height="14" x="1" y="4" fill="#888888"><animate id="svgSpinnersBarsScaleFade0" fill="freeze" attributeName="y" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsScaleFade1.end-0.25s" dur="0.75s" values="1;.2" /></rect><rect width="6" height="14" x="9" y="4" fill="currentColor" opacity=".4"><animate fill="freeze" attributeName="y" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsScaleFade0.begin+0.15s" dur="0.75s" values="1;.2" /></rect><rect width="6" height="14" x="17" y="4" fill="currentColor" opacity=".3"><animate id="svgSpinnersBarsScaleFade1" fill="freeze" attributeName="y" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="1;5" /><animate fill="freeze" attributeName="height" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="22;14" /><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsScaleFade0.begin+0.3s" dur="0.75s" values="1;.2" /></rect></svg>
+                    </template>
+                  </div>
+                </td>
+              </tr>
+              <tr v-else-if="data.length === 0">
+                <td :colspan="99">
+                  <div class="flex items-center justify-center min-h-32">
+                    <template v-if="$slots.empty">
+                      <slot name="empty" />
+                    </template>
+                    <template v-else>
+                      <div class="i-simple-icons:protodotio text-5xl text-gray-400 select-none" />
+                    </template>
+                  </div>
+                </td>
+              </tr>
               <template v-else>
                 <tr
                   v-for="(item, idx) in data" :key="item.id"

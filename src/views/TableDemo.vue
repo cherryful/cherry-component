@@ -143,7 +143,6 @@ const bulkActions = [
       </Table>
     </div>
   </div>
-
   <div>
     Bulk Actions Table Demo:
     <div class="mt-4 w-2xl">
