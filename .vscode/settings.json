@@ -8,5 +8,5 @@
     "*.css": "postcss"
   },
   "css.validate": false,
-  "scss.valie": false,
+  "scss.validate": false,
 }

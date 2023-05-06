@@ -3,8 +3,8 @@ import type { InputHTMLAttributes } from 'vue'
 import { computed, reactive } from 'vue'
 
 interface Props extends InputHTMLAttributes {
+  modelValue?: string
   label?: string
-  value?: string
   type?: string
   disabled?: boolean
   required?: boolean
@@ -16,7 +16,7 @@ interface Props extends InputHTMLAttributes {
 
 const props = withDefaults(defineProps<Props>(), {
   label: '',
-  value: '',
+  modelValue: '',
   type: 'text',
   disabled: false,
   required: false,
@@ -27,14 +27,14 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emit = defineEmits<{
-  (evt: 'update:value', val: string): void
+  (evt: 'update:modelValue', val: string): void
   (evt: 'prepend'): void
   (evt: 'append'): void
 }>()
 
 const inputValue = computed({
-  get: () => props.value,
-  set: val => emit('update:value', val),
+  get: () => props.modelValue,
+  set: val => emit('update:modelValue', val),
 })
 
 const flux = reactive({
@@ -43,7 +43,7 @@ const flux = reactive({
 </script>
 
 <template>
-  <div class="flex flex-col w-full relative" :class="[disabled ? 'opacity-60' : '']">
+  <div class="flex flex-col w-full relative" :class="[disabled && 'opacity-60']">
     <label class="text-sm font-bold mb-2 empty:hidden">
       <template v-if="label">{{ label }}</template>
       <slot v-else />
@@ -67,9 +67,9 @@ const flux = reactive({
       >
         <slot name="prepend" />
       </span>
+      <!-- TODO: v-bind="$attrs" -->
       <input
         v-model="inputValue"
-        v-bind="$attrs"
         :type="type"
         :disabled="disabled"
         :placeholder="placeholder"
