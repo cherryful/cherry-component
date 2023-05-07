@@ -23,6 +23,7 @@ import FileInputDemo from './FileInputDemo.vue'
 import ToastDemo from './ToastDemo.vue'
 import SkeletonDemo from './SkeletonDemo.vue'
 import TableDemo from './TableDemo.vue'
+import TreeDemo from './TreeDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
@@ -111,6 +112,7 @@ async function fetchSentence() {
       <ToastDemo />
       <SkeletonDemo />
       <TableDemo />
+      <TreeDemo />
     </div>
   </div>
 </template>

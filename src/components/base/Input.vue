@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <script setup lang="ts">
 import type { InputHTMLAttributes } from 'vue'
 import { computed, reactive } from 'vue'
@@ -70,6 +76,7 @@ const flux = reactive({
       <!-- TODO: v-bind="$attrs" -->
       <input
         v-model="inputValue"
+        v-bind="$attrs"
         :type="type"
         :disabled="disabled"
         :placeholder="placeholder"

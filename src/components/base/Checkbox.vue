@@ -1,8 +1,14 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 
 interface Props {
-  modelValue?: boolean
+  modelValue?: any
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   checked?: boolean
   disabled?: boolean
@@ -16,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emits = defineEmits<{
-  (evt: 'update:modelValue', val: boolean): void
+  (evt: 'update:modelValue', val: any): void
 }>()
 
 const checkValue = computed({
