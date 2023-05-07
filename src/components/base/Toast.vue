@@ -58,7 +58,7 @@ defineExpose({
 <template>
   <TransitionGroup
     tag="div"
-    class="grid gap-2 fixed z-200 sm:min-w-96"
+    class="fixed z-200 grid gap-2 sm:min-w-96"
     :class="{
       'left-1/2 -translate-x-1/2': align === 'center',
       'left-12': align === 'left',

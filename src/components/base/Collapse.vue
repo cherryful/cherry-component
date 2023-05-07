@@ -41,7 +41,7 @@ onMounted(() => flux.resizeContent())
 </script>
 
 <template>
-  <div class="p-4 border border-gray-100 rounded-md">
+  <div class="border border-gray-100 rounded-md p-4">
     <div
       class="flex items-center"
       :class="[
@@ -56,7 +56,7 @@ onMounted(() => flux.resizeContent())
         <slot />
       </div>
       <div
-        class="transition duration-200 ease-in-out transform transition-transform"
+        class="transform transition transition-transform duration-200 ease-in-out"
         :class="[
           iconLeft ? 'mr-2' : 'ml-2',
           {
@@ -64,7 +64,7 @@ onMounted(() => flux.resizeContent())
           },
         ]"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5  text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 text-gray-500">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </div>

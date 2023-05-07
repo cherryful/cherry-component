@@ -38,7 +38,7 @@ if (defaultSlot) {
   }
 }
 
-const Render = () => {
+function Render() {
   if (slots.default) {
     if (typeof props.modelValue === 'number')
       return slots.default()[props.modelValue]
@@ -67,7 +67,7 @@ const Render = () => {
         @click="flux.selectTab(tab, idx)"
       >
         <span> {{ tab?.title }} </span>
-        <span class="inline-block w-5 h-5 ml-2" :class="tab?.icon" />
+        <span class="ml-2 inline-block h-5 w-5" :class="tab?.icon" />
       </div>
     </div>
     <div class="p-4">

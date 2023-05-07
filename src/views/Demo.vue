@@ -46,17 +46,17 @@ async function fetchSentence() {
 
 <template>
   <div class="mx-5">
-    <div class="space-y-5 my-5">
-      <div class="text-3xl i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
+    <div class="my-5 space-y-5">
+      <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy text-3xl" />
       <div>
-        <button class="btn bg-amber-500 hover:bg-amber-600 mr-5" @click="fetchSentence">
+        <button class="mr-5 bg-amber-500 btn hover:bg-amber-600" @click="fetchSentence">
           Fetch API
         </button>
         {{ sentence }}
       </div>
 
       <div>
-        <div class="btn bg-blue-500 hover:bg-blue-600 mr-5" @click="store.increment">
+        <div class="mr-5 bg-blue-500 btn hover:bg-blue-600" @click="store.increment">
           Increase Store Count
         </div>
         <span class="text-xl font-bold text-green-400">
@@ -66,7 +66,7 @@ async function fetchSentence() {
 
       <div>
         <RouterLink to="/hello">
-          <div class="btn bg-red-500 hover:bg-red-600">
+          <div class="bg-red-500 btn hover:bg-red-600">
             To Hello Page
           </div>
         </RouterLink>
@@ -77,13 +77,13 @@ async function fetchSentence() {
           useMouseClick hook
           <p>
             Mouse click x:
-            <span class="text-lg text-red-500 font-bold">
+            <span class="text-lg font-bold text-red-500">
               {{ mouse.x }}
             </span>
           </p>
           <p>
             Mouse click y:
-            <span class="text-lg text-blue-500 font-bold">
+            <span class="text-lg font-bold text-blue-500">
               {{ mouse.y }}
             </span>
           </p>
