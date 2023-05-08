@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import Tag from '@/components/base/Tag.vue'
+
+function onClose() {
+  alert('close')
+}
 </script>
 
 <template>
@@ -70,13 +74,13 @@ import Tag from '@/components/base/Tag.vue'
         border:
       </span>
       <Tag>
-        noborder
+        no-border
       </Tag>
       <Tag :border="true">
         border
       </Tag>
     </div>
-    <div class="space-x-3 flex items-center">
+    <div class="flex items-center space-x-3">
       <span class="inline-block w-20">
         icon:
       </span>
@@ -89,10 +93,13 @@ import Tag from '@/components/base/Tag.vue'
     </div>
     <div class="space-x-3">
       <span class="inline-block w-20">
-        custom:
+        other:
       </span>
       <Tag custom="bg-pink-200 text-pink-600 px-4 py-2 border-2 border-pink-600 rounded-xl">
         custom
+      </Tag>
+      <Tag closeable @close="onClose">
+        closeable
       </Tag>
     </div>
   </div>

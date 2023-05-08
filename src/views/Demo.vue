@@ -24,6 +24,7 @@ import ToastDemo from './ToastDemo.vue'
 import SkeletonDemo from './SkeletonDemo.vue'
 import TableDemo from './TableDemo.vue'
 import TreeDemo from './TreeDemo.vue'
+import DynamicTagsDemo from './DynamicTagsDemo.vue'
 
 import { useStore } from '@/store'
 import useMouseClick from '@/composables/useMouse'
@@ -113,6 +114,7 @@ async function fetchSentence() {
       <SkeletonDemo />
       <TableDemo />
       <TreeDemo />
+      <DynamicTagsDemo />
     </div>
   </div>
 </template>

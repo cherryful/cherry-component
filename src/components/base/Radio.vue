@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import uniqueId from 'lodash/uniqueId'
+import { uniqueId } from 'lodash-es'
 import { computed } from 'vue'
 
 const props = withDefaults(defineProps<{
@@ -72,7 +72,7 @@ const themes = {
 <template>
   <label
     :for="uid"
-    class="text-sm font-medium leading-6 text-gray-900 inline-flex items-center"
+    class="inline-flex items-center text-sm font-medium leading-6 text-gray-900"
     :class="[
       disabled ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer',
       {

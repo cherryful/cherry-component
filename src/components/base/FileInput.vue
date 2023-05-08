@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { uniqueId } from 'lodash'
+import { uniqueId } from 'lodash-es'
 import { computed, reactive } from 'vue'
 
 interface FileInfo {
@@ -60,7 +60,7 @@ const flux = reactive({
       <div v-if="flux.fileNames.length > 1" class="flex flex-wrap gap-1">
         <div
           v-for="item in flux.fileNames" :key="item"
-          class="text-xs rounded inline-block whitespace-nowrap text-center px-1 bg-primary-300 text-whit"
+          class="text-whit inline-block whitespace-nowrap rounded bg-primary-300 px-1 text-center text-xs"
         >
           {{ item }}
         </div>
@@ -71,7 +71,7 @@ const flux = reactive({
       <div v-else class="text-gray-400">
         {{ placeholder }}
       </div>
-      <div class="i-fa-upload w-5 h-5 text-gray-400" />
+      <div class="i-fa-upload h-5 w-5 text-gray-400" />
     </template>
   </label>
   <input

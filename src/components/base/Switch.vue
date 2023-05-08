@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import uniqueId from 'lodash/uniqueId'
+import { uniqueId } from 'lodash-es'
 
 interface Props {
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
@@ -78,9 +78,12 @@ const themes = {
       class="flex items-center"
       :class="[disabled ? 'cursor-not-allowed opacity-60' : readonly ? '' : 'cursor-pointer']"
     >
+      <div class="mr-2 text-sm font-medium leading-6 text-gray-900 empty:hidden">
+        <slot />
+      </div>
       <div
         tabindex="0"
-        class="relative focus:rounded-full focus:ring-offset-2 focus:outline-none focus:ring-2"
+        class="relative focus:rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2"
         :class="[themes[type].focus]"
       >
         <input
@@ -104,7 +107,7 @@ const themes = {
         />
 
         <div
-          class="absolute left-0 top-0.5 bg-white rounded-full transition"
+          class="absolute left-0 top-0.5 rounded-full bg-white transition"
           :class="[
             {
               'w-3 h-3': size === 'sm',
@@ -129,10 +132,6 @@ const themes = {
             <path v-else d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-      </div>
-
-      <div class="ml-2 font-medium empty:hidden">
-        <slot />
       </div>
     </label>
   </div>

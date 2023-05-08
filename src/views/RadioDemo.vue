@@ -58,7 +58,7 @@ function onChange(val) {
   <div class="flex gap-4">
     <Radio v-slot="{ checked }" v-model="checkValue" hidden type="success" value="apple" @change="onChange">
       <div
-        class="w-8 h-8 rounded-full border-2 border-white bg-success-500"
+        class="h-8 w-8 border-2 border-white rounded-full bg-success-500"
         :class=" {
           'ring-2 ring-success-500': checked,
         }
@@ -67,7 +67,7 @@ function onChange(val) {
     </Radio>
     <Radio v-slot="{ checked }" v-model="checkValue" hidden type="info" value="banana" @change="onChange">
       <div
-        class="w-8 h-8 rounded-full border-2 border-white bg-info-500"
+        class="h-8 w-8 border-2 border-white rounded-full bg-info-500"
         :class="{
           'ring-2 ring-info-500': checked,
         }"
@@ -75,7 +75,7 @@ function onChange(val) {
     </Radio>
     <Radio v-slot="{ checked }" v-model="checkValue" hidden type="warning" value="orange" @change="onChange">
       <div
-        class="w-8 h-8 rounded-full border-2 border-white bg-warning-500"
+        class="h-8 w-8 border-2 border-white rounded-full bg-warning-500"
         :class="{
           'ring-2 ring-warning-500': checked,
         }"

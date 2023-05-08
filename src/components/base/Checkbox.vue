@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-}
-</script>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 
@@ -31,15 +25,21 @@ const checkValue = computed({
 })
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <template>
-  <div class="flex h-6 items-center">
+  <div class="h-6 flex items-center">
     <input
       v-model="checkValue"
       v-bind="$attrs"
       type="checkbox"
       :disabled="disabled"
       aria-describedby="comments-description"
-      class="h-4 w-4 rounded border-gray-300 mr-2"
+      class="mr-2 h-4 w-4 border-gray-300 rounded"
       :class="[
         {
           'opacity-30 cursor-not-allowed': disabled,
