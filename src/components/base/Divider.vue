@@ -1,10 +1,8 @@
 <script setup lang="ts">
-interface Props {
+withDefaults(defineProps<{
   align?: 'left' | 'right' | 'center'
   dashed?: boolean
-}
-
-withDefaults(defineProps<Props>(), {
+}>(), {
   align: 'center',
   dashed: false,
 })
@@ -15,9 +13,7 @@ withDefaults(defineProps<Props>(), {
     <div class="absolute inset-0 flex items-center" aria-hidden="true">
       <div
         class="w-full border-t border-gray-300"
-        :class="{
-          'border-dashed': dashed,
-        }"
+        :class="{ 'border-dashed': dashed }"
       />
     </div>
     <div

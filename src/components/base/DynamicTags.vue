@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import { computed, reactive, ref } from 'vue'
+import { uniqueId } from 'lodash-es'
 import Tag from './Tag.vue'
 
 const props = withDefaults(defineProps<{
@@ -16,6 +17,8 @@ const props = withDefaults(defineProps<{
 })
 
 const emits = defineEmits(['update:modelValue'])
+
+const uid = uniqueId('dynamic-tag-')
 
 const tagNames = computed({
   get: () => props.modelValue,
@@ -76,14 +79,14 @@ const flux = reactive({
           <div class="relative h-4 min-w-7">
             <!-- TODO: unique id -->
             <input
-              id="input-tag"
+              :id="uid"
               ref="newTagInputRef"
               v-model="flux.newTag"
               class="absolute inline h-full w-full border-none bg-transparent text-gray-500 outline-transparent focus:outline-none"
               @blur="flux.addTag"
               @keyup.enter="($refs.newTagInputRef as HTMLElement).blur()"
             >
-            <label for="input-tag" class="invisible" v-text="flux.newTag" />
+            <label :for="uid" class="invisible" v-text="flux.newTag" />
           </div>
         </Tag>
       </slot>

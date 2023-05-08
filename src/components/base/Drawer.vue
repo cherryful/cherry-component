@@ -1,19 +1,17 @@
 <script setup lang="ts">
 import { onUnmounted, watch } from 'vue'
 
-interface Props {
+const props = withDefaults(defineProps<{
   placement?: 'top' | 'right' | 'bottom' | 'left'
   modelValue?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   placement: 'left',
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emits = defineEmits(['update:modelValue'])
 
 function close() {
-  emit('update:modelValue', !props.modelValue)
+  emits('update:modelValue', !props.modelValue)
 }
 
 watch(

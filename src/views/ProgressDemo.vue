@@ -37,12 +37,11 @@ setInterval(() => {
         <Progress color="error" :percentage="percentage" />
       </div>
     </div>
-    <div class="space-y-6 space-x-5">
-      Varient:
-      <div class="w-32">
+    <div class="flex items-center gap-5">
+      Variant:
+      <div class="w-14">
         <Progress :percentage="percentage" variant="circle" />
       </div>
-
       <div class="w-32">
         <Progress :percentage="percentage" variant="score" />
       </div>

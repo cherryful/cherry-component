@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
 
-interface Props {
+const props = withDefaults(defineProps<{
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   thickness?: number
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   type: 'primary',
-  thickness: 8,
+  thickness: 6,
 })
 
 const wrapper = ref<HTMLElement | null>(null)
@@ -35,8 +33,8 @@ onMounted(() => {
     <slot>
       <div
         ref="spinner"
-        class="animate-spin inline-block w-full h-full border-gray-300 rounded-full bg-transparent"
-        :class="{ [type]: true }"
+        class="inline-block h-full w-full animate-spin border-gray-300 rounded-full bg-transparent"
+        :class="[[type]]"
       >
         <span class="sr-only">Loading...</span>
       </div>
