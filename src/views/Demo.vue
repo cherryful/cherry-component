@@ -13,7 +13,7 @@ import AlertDemo from './AlertDemo.vue'
 import InputDemo from './InputDemo.vue'
 import PopoverDemo from './PopoverDemo.vue'
 import DividerDemo from './DividerDemo.vue'
-import TabDemo from './TabDemo.vue'
+import TabsDemo from './TabsDemo.vue'
 import BadgeDemo from './BadgeDemo.vue'
 import DropdownDemo from './DropdownDemo.vue'
 import SelectDemo from './SelectDemo.vue'
@@ -101,7 +101,7 @@ async function fetchSentence() {
       <InputDemo />
       <PopoverDemo />
       <DrawerDemo />
-      <TabDemo />
+      <TabsDemo />
       <DividerDemo />
       <BadgeDemo />
       <SelectDemo />

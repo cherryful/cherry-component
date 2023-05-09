@@ -55,7 +55,7 @@ watch(newTagInputRef, (value) => {
         <input
           ref="newTagInputRef"
           v-model="newTagValue"
-          class="border border-gray-300 rounded px-2 py-1"
+          class="h-7 w-20 border border-gray-300 rounded px-2 text-sm"
           @keyup.enter="$event => {
             submit($event)
             newTagValue = ''

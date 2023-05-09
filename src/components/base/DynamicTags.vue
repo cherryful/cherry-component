@@ -77,7 +77,6 @@ const flux = reactive({
       <slot name="input" :submit="flux.addTag" :deactive="flux.deactive">
         <Tag>
           <div class="relative h-4 min-w-7">
-            <!-- TODO: unique id -->
             <input
               :id="uid"
               ref="newTagInputRef"

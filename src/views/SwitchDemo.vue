@@ -3,6 +3,12 @@ import { ref } from 'vue'
 import Switch from '@/components/base/Switch.vue'
 
 const value = ref(true)
+
+const checkedValue = ref('checked')
+
+function onChange(val) {
+  alert(val)
+}
 </script>
 
 <template>
@@ -51,7 +57,13 @@ const value = ref(true)
         Enabled
       </Switch>
       <Switch icon readonly checked>
-        Enabled
+        readonly
+      </Switch>
+      <Switch v-model="value" @update:model-value="onChange">
+        @update:model-value
+      </Switch>
+      <Switch v-model="checkedValue" checked-value="checked" unchecked-value="unchecked" @update:model-value="onChange">
+        custom-value
       </Switch>
     </div>
   </div>

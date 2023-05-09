@@ -10,6 +10,10 @@ const options = [
 ]
 
 const selected = ref('angular')
+
+function updateValue(val: string | number | null) {
+  alert(val)
+}
 </script>
 
 <template>
@@ -17,7 +21,13 @@ const selected = ref('angular')
     Select Demo
   </div>
   <div class="w-64">
-    <Select v-model="selected" placeholder="Yooooo~" :label="selected || 'Base Demo'" :options="options" />
+    <Select
+      v-model="selected"
+      placeholder="Yooooo~"
+      :label="selected || 'Base Demo'"
+      :options="options"
+      @change="updateValue"
+    />
   </div>
   <div class="w-64">
     <Select v-model="selected" label="clearable" clearable :options="options" />

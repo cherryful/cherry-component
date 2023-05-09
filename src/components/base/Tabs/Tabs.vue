@@ -1,14 +1,17 @@
 <script lang="ts" setup>
 import { provide, reactive, useSlots } from 'vue'
 
-const props = defineProps({
-  modelValue: {
-    type: [Number, String],
-    default: null,
-  },
+const props = withDefaults(defineProps<{
+  modelValue?: number | string | null
+  full?: boolean
+  type?: 'card' | 'flex'
+}>(), {
+  modelValue: null,
+  full: false,
+  type: 'card',
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emits = defineEmits(['update:modelValue'])
 
 provide('tabs', { value: props.modelValue })
 
@@ -17,7 +20,7 @@ const defaultSlot = slots.default?.()
 
 const flux = reactive({
   tab: [] as any[],
-  activeTab(tab: any, idx: number) {
+  activeValue(tab: any, idx: number) {
     if (typeof props.modelValue === 'number')
       return idx
     if (typeof props.modelValue === 'string')
@@ -25,28 +28,24 @@ const flux = reactive({
   },
   selectTab(tab: any, idx: number) {
     if (typeof props.modelValue === 'number')
-      emit('update:modelValue', idx)
+      emits('update:modelValue', idx)
     if (typeof props.modelValue === 'string')
-      emit('update:modelValue', tab.value)
+      emits('update:modelValue', tab.value)
   },
 })
 
 if (defaultSlot) {
-  for (let i = 0; i < defaultSlot.length; i++) {
-    const tab = defaultSlot[i]
-    flux.tab = [...flux.tab, tab.props]
-  }
+  for (let i = 0; i < defaultSlot.length; i++)
+    flux.tab.push(defaultSlot[i].props)
 }
 
 function Render() {
   if (slots.default) {
     if (typeof props.modelValue === 'number')
       return slots.default()[props.modelValue]
-
     if (typeof props.modelValue === 'string' && defaultSlot) {
       for (let i = 0; i < defaultSlot.length; i++) {
         const tab = defaultSlot[i]
-
         if (tab.props?.value === props.modelValue)
           return slots.default()[i]
       }
@@ -56,21 +55,25 @@ function Render() {
 </script>
 
 <template>
-  <div class="w-full p-4">
+  <div class="w-full px-3">
     <div class="flex items-center">
+      <div v-if="$slots.prefix" class="mr-3 text-gray-600">
+        <slot name="prefix" />
+      </div>
       <div
         v-for="(tab, idx) in flux.tab" :key="idx"
         class="tab"
         :class="{
-          active: flux.activeTab(tab, idx) === modelValue,
+          'active': flux.activeValue(tab, idx) === modelValue,
+          'w-full justify-center': type === 'flex',
         }"
         @click="flux.selectTab(tab, idx)"
       >
         <span> {{ tab?.title }} </span>
-        <span class="ml-2 inline-block h-5 w-5" :class="tab?.icon" />
+        <span class="ml-1 inline-block h-5 w-5" :class="tab?.icon" />
       </div>
     </div>
-    <div class="p-4">
+    <div class="p-3">
       <Render />
     </div>
   </div>
@@ -78,9 +81,8 @@ function Render() {
 
 <style lang="scss" scoped>
 .tab {
-  @apply flex items-center cursor-pointer my-2 px-7 pt-4 pb-3.5 border-b-2 border-transparent;
-  @apply text-xs font-medium uppercase leading-tight text-neutral-500;
-
+  @apply flex items-center cursor-pointer my-2 px-4 pt-4 pb-3 border-b-2 border-transparent;
+  @apply text-sm font-medium uppercase leading-tight text-neutral-500;
   &.active {
     @apply text-primary-500 border-primary-500;
   }

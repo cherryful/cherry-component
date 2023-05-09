@@ -27,7 +27,7 @@ const flux = reactive({
   inPanel: false,
   status: false,
   onClick: () => {
-    props.trigger === 'click' && flux.toogleStatus()
+    props.trigger === 'click' && flux.toggleStatus()
   },
   onMouseenter() {
     props.trigger === 'hover' && flux.open()
@@ -36,7 +36,7 @@ const flux = reactive({
     props.trigger === 'hover' && flux.close()
   },
 
-  toogleStatus() {
+  toggleStatus() {
     flux.status = !flux.status
     flux.status ? flux.open() : flux.close()
   },
@@ -95,7 +95,7 @@ const flux = reactive({
   >
     <div
       ref="target"
-      class="inline-flex w-full justify-center items-center rounded-md"
+      class="w-full inline-flex items-center justify-center rounded-md"
       @click="flux.onClick"
       @mouseenter="flux.onMouseenter"
       @mouseleave="sustain ? null : flux.onMouseleave()"
@@ -114,7 +114,7 @@ const flux = reactive({
       <div
         v-if="(hoverAlive && flux.inPanel) || flux.status"
         ref="dropdown"
-        class="fixed z-10 top-0 left-0 min-w-max bg-white dark:bg-slate-800 rounded-lg shadow-lg"
+        class="fixed left-0 top-0 z-10 min-w-max rounded-lg bg-white shadow-lg dark:bg-slate-800"
         tabindex="-1"
       >
         <div

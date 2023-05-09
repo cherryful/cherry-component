@@ -61,7 +61,7 @@ const flux = reactive({
   >
     <div
       ref="target"
-      class="inline-flex w-full justify-center items-center rounded-md"
+      class="w-full inline-flex items-center justify-center rounded-md"
       @mouseenter="flux.onMouseenter"
     >
       <slot />
@@ -77,7 +77,7 @@ const flux = reactive({
       <div
         v-if="flux.status"
         ref="dropdown"
-        class="absolute z-10 min-w-max bg-white dark:bg-slate-800 rounded-lg shadow-lg"
+        class="absolute z-10 min-w-max rounded-lg bg-white shadow-lg dark:bg-slate-800"
         tabindex="-1"
         @mouseenter="flux.onMouseenter"
       >
@@ -87,18 +87,18 @@ const flux = reactive({
               <template v-for="option in options" :key="option.key">
                 <div
                   v-if="option"
-                  class="flex items-center px-3 py-1 cursor-pointer rounded-md hover:text-primary-600 hover:bg-primary-200"
+                  class="flex cursor-pointer items-center rounded-md px-3 py-1 hover:bg-primary-200 hover:text-primary-600"
                   @click.stop="flux.select(option)"
                 >
                   <template v-if="typeof option.icon === 'string'">
-                    <div :class="option.icon" class="text-gray-500 w-5" />
+                    <div :class="option.icon" class="w-5 text-gray-500" />
                   </template>
                   <template v-else>
                     <component :is="option.icon as VNode" class="w-5" />
                   </template>
                   <span class="ml-2">{{ option.label }}</span>
                 </div>
-                <div v-else class="border dark:border-slate-600 my-2" />
+                <div v-else class="my-2 border dark:border-slate-600" />
               </template>
             </div>
           </slot>

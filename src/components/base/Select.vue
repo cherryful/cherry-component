@@ -8,7 +8,7 @@ interface Option {
   [key: string]: unknown
 }
 
-interface Props {
+const props = withDefaults(defineProps<{
   label?: string
   modelValue: string | number | null
   placeholder?: string
@@ -18,9 +18,7 @@ interface Props {
   options?: Array<Option>
   display?: string
   errorMessage?: string
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   label: '',
   display: 'label',
   placeholder: 'Please select',
@@ -76,7 +74,7 @@ const flux = reactive({
     </label>
     <div
       v-on-click-outside="() => flux.show = false"
-      class="relative mb-1 mt-2"
+      class="relative my-1"
     >
       <button
         type="button"
@@ -97,7 +95,7 @@ const flux = reactive({
           {{ selectedLabel }}
         </span>
         <span class="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500">
-          <template v-if="clearable">
+          <template v-if="clearable && selected">
             <div
               class="i-mi:select group-hover:i-mi:circle-error h-5 w-5 group-hover:h-5 group-hover:w-5 hover:cursor-pointer"
               @click.stop="flux.clear"
@@ -122,7 +120,7 @@ const flux = reactive({
             id="listbox-option-0"
             :key="option.value"
             role="option"
-            class="relative cursor-default select-none py-2 pl-3 pr-9"
+            class="relative cursor-default select-none py-2 pl-3 pr-9 text-sm"
             :class="{
               'bg-primary-500 text-white ': modelValue === option.value,
               'text-gray-900 hover:bg-primary-500 hover:text-white': modelValue !== option.value,

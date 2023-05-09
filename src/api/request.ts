@@ -8,6 +8,7 @@ export async function handleResult(resp: Response) {
     }
     if (!reason)
       reason = resp.statusText
+    return Promise.reject(reason)
   }
   return await resp.json()
 }

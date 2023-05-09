@@ -16,7 +16,7 @@ withDefaults(defineProps<Props>(), {
   <span class="relative cursor-default">
     <slot />
     <span
-      class="absolute -top-3 -right-4 text-white rounded-full translate-x-1/2"
+      class="absolute translate-x-1/2 rounded-full text-white -right-4 -top-3"
       :class="[
         content ? 'min-w-5' : 'w-3 h-3',
         [type],

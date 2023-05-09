@@ -1,12 +1,16 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <script setup lang="ts">
-interface Props {
+withDefaults(defineProps<{
   type?: 'default' | 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   size?: 'sm' | 'base' | 'lg'
   disabled?: boolean
   custom?: string
-}
-
-withDefaults(defineProps<Props>(), {
+}>(), {
   type: 'default',
   size: 'base',
   disabled: false,

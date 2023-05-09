@@ -2,34 +2,48 @@
 import { computed } from 'vue'
 import { uniqueId } from 'lodash-es'
 
-interface Props {
+const props = withDefaults(defineProps<{
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
-  modelValue?: boolean
-  checked?: boolean
   size?: 'sm' | 'base' | 'lg'
+  modelValue?: boolean | string | number
+  checked?: boolean
   disabled?: boolean
   icon?: boolean
   readonly?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+  checkedValue?: any
+  uncheckedValue?: any
+}>(), {
   type: 'primary',
   modelValue: false,
   size: 'base',
   disabled: false,
   icon: false,
   readonly: false,
+  checkedValue: undefined,
+  uncheckedValue: undefined,
 })
 
-const emit = defineEmits<{
-  (evt: 'update:modelValue', val: boolean): void
+const emits = defineEmits<{
+  (evt: 'update:modelValue', val: any): void
 }>()
 
 const uid = uniqueId('switch-')
 
 const switchValue = computed({
-  get: () => props.modelValue,
-  set: val => emit('update:modelValue', val),
+  get: () => {
+    if (props.checkedValue && props.modelValue === props.checkedValue)
+      return true
+    if (props.uncheckedValue && props.modelValue === props.uncheckedValue)
+      return false
+    return props.modelValue
+  },
+  set: (val) => {
+    if (props.checkedValue && val)
+      val = props.checkedValue
+    if (props.uncheckedValue && !val)
+      val = props.uncheckedValue
+    emits('update:modelValue', val)
+  },
 })
 
 const themes = {
@@ -68,6 +82,12 @@ const themes = {
     text: 'text-accent-500',
     focus: 'focus:ring-accent-500',
   },
+}
+</script>
+
+<script lang="ts">
+export default {
+  inheritAttrs: false,
 }
 </script>
 
