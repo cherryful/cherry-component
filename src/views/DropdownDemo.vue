@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { h } from 'vue'
-import type { DropdownOption } from '@/components/base/Dropdown.vue'
-import Dropdown from '@/components/base/Dropdown.vue'
-import Button from '@/components/base/Button.vue'
+import type { DropdownOption } from '@/components/Dropdown.vue'
+import Dropdown from '@/components/Dropdown.vue'
+import Button from '@/components/Button.vue'
 
 const options: DropdownOption[] = [
   {
@@ -28,12 +28,12 @@ function select(val: DropdownOption) {
 </script>
 
 <template>
-  <div class="flex flex-col border p-4 mb-4 h-32">
+  <div class="mb-4 h-32 flex flex-col border p-4">
     <div class="mb-2">
       Basic
     </div>
 
-    <div class="gap-x-4 flex justify-center">
+    <div class="flex justify-center gap-x-4">
       <Dropdown :options="options">
         <Button>Base</Button>
       </Dropdown>
@@ -45,7 +45,7 @@ function select(val: DropdownOption) {
         <template #options>
           <div
             v-for="option of options" :key="option.key"
-            class="mx-1 px-2 py-1 hover:bg-amber-500 cursor-pointer rounded-md"
+            class="mx-1 cursor-pointer rounded-md px-2 py-1 hover:bg-amber-500"
             @click="select(option)"
           >
             {{ option.label }}

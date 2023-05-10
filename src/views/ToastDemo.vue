@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Toast from '@/components/base/Toast.vue'
-import Button from '@/components/base/Button.vue'
+import Toast from '@/components/Toast.vue'
+import Button from '@/components/Button.vue'
 
 type ToastCtx = InstanceType<typeof Toast>
 
@@ -14,7 +14,7 @@ const align = ref<'left' | 'center' | 'right'>('center')
 <template>
   <Toast ref="toast1" :queue="false" :timeout="1000" />
   <Toast ref="toast2" v-slot="{ type }">
-    <div class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+    <div class="pointer-events-auto max-w-sm w-full overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
       <div class="p-4">
         <div class="flex items-start">
           <div class="flex-shrink-0">

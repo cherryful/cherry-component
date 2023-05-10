@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Select from '@/components/base/Select.vue'
+import Select from '@/components/Select.vue'
 
 const options = [
   { label: 'Angular', value: 'angular', other: 'HHH1' },

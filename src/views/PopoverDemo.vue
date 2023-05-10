@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Popover from '@/components/base/Popover.vue'
+import Popover from '@/components/Popover.vue'
+import Button from '@/components/Button.vue'
 
 const msg1 = ref('closed')
 const msg2 = ref('closed')
@@ -104,9 +105,9 @@ const msg2 = ref('closed')
         Event:
       </span>
       <Popover @open="msg1 = 'opened'" @close="msg1 = 'closed'">
-        <button class="btn">
+        <Button type="secondary">
           click {{ msg1 }}
-        </button>
+        </Button>
         <template #content>
           <div class="px-4 py-2">
             The content of the Popover.
@@ -114,9 +115,9 @@ const msg2 = ref('closed')
         </template>
       </Popover>
       <Popover trigger="hover" @open="msg2 = 'opened'" @close="msg2 = 'closed'">
-        <button class="btn">
+        <Button type="secondary">
           hover {{ msg2 }}
-        </button>
+        </Button>
         <template #content>
           <div class="px-4 py-2">
             The content of the Popover.
@@ -129,9 +130,9 @@ const msg2 = ref('closed')
         other:
       </span>
       <Popover dissmissable>
-        <button class="btn">
+        <Button type="secondary">
           dissmissable
-        </button>
+        </Button>
         <template #content>
           <div class="px-4 py-2">
             The content of the Popover.
@@ -139,9 +140,9 @@ const msg2 = ref('closed')
         </template>
       </Popover>
       <Popover trigger="hover" sustain>
-        <button class="btn">
+        <Button type="secondary">
           hover & sustain
-        </button>
+        </Button>
         <template #content>
           <div class="px-4 py-2">
             The content of the Popover.
@@ -149,9 +150,9 @@ const msg2 = ref('closed')
         </template>
       </Popover>
       <Popover trigger="hover" hover-alive>
-        <button class="btn">
+        <Button type="secondary">
           hover-alive
-        </button>
+        </Button>
         <template #content>
           <div class="px-4 py-2">
             The content of the Popover.

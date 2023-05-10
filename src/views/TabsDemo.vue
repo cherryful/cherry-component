@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import Tabs from '@/components/base/Tabs/Tabs.vue'
-import TabPane from '@/components/base/Tabs/TabPane.vue'
+import Tabs from '@/components/Tabs/Tabs.vue'
+import TabPane from '@/components/Tabs/TabPane.vue'
 
 const numberCurrent = ref(0)
 const stringCurrent = ref('vue')

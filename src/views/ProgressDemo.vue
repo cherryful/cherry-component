@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import Progress from '@/components/base/Progress.vue'
+import Progress from '@/components/Progress.vue'
 
 const percentage = ref(0)
 setInterval(() => {

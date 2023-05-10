@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '@/components/base/Button.vue'
+import Button from '@/components/Button.vue'
 </script>
 
 <template>
@@ -56,7 +56,7 @@ import Button from '@/components/base/Button.vue'
         disabled
       </Button>
     </div>
-    <div class="space-x-3 flex items-center">
+    <div class="flex items-center space-x-3">
       <span class="inline-block w-20">
         icon:
       </span>

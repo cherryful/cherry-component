@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { h, nextTick, ref, watch } from 'vue'
-import Tag from '@/components/base/Tag.vue'
-import DynamicTags from '@/components/base/DynamicTags.vue'
+import Tag from '@/components/Tag.vue'
+import DynamicTags from '@/components/DynamicTags.vue'
 
 const tagNames = ref(['AAAA', 'BBBB', 'CCCC'])
 

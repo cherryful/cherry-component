@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Table from '@/components/base/Table.vue'
+import Table from '@/components/Table.vue'
 
 const list = [
   {
@@ -43,30 +43,30 @@ const bulkActions = [
     <div class="mt-4 w-2xl">
       <Table :data="list">
         <template #headers>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Name
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Age
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Email
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Status
           </th>
         </template>
         <template #rows="{ row }">
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.name }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.age }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.email }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.status }}
           </td>
         </template>
@@ -78,30 +78,30 @@ const bulkActions = [
     <div class="mt-4 w-2xl">
       <Table :data="list" loading>
         <template #headers>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Name
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Age
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Email
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Status
           </th>
         </template>
         <template #rows="{ row }">
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.name }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.age }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.email }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.status }}
           </td>
         </template>
@@ -113,30 +113,30 @@ const bulkActions = [
     <div class="mt-4 w-2xl">
       <Table :data="[]">
         <template #headers>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Name
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Age
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Email
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Status
           </th>
         </template>
         <template #rows="{ row }">
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.name }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.age }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.email }}
           </td>
-          <td class="w-16 whitespace-nowrap text-center px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-center text-sm text-gray-500 sm:pl-6">
             {{ row.status }}
           </td>
         </template>
@@ -148,34 +148,34 @@ const bulkActions = [
     <div class="mt-4 w-2xl">
       <Table :data="list" :actions="bulkActions">
         <template #headers>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Name
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Age
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Email
           </th>
-          <th scope="col" class="py-3.5 px-3 col-span-3 text-sm font-semibold text-gray-900 sm:pl-6">
+          <th scope="col" class="col-span-3 px-3 py-3.5 text-sm font-semibold text-gray-900 sm:pl-6">
             Status
           </th>
-          <th scope="col" class="px-4 py-3.5 col-span-3 text-sm font-semibold text-gray-900" />
+          <th scope="col" class="col-span-3 px-4 py-3.5 text-sm font-semibold text-gray-900" />
         </template>
         <template #rows="{ row }">
-          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-sm text-gray-500 sm:pl-6">
             {{ row.name }}
           </td>
-          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-sm text-gray-500 sm:pl-6">
             {{ row.age }}
           </td>
-          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-sm text-gray-500 sm:pl-6">
             {{ row.email }}
           </td>
-          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 sm:pl-6 text-sm text-gray-500">
+          <td class="w-16 whitespace-nowrap px-3.5 py-2 pl-4 text-sm text-gray-500 sm:pl-6">
             {{ row.status }}
           </td>
-          <td class="w-16 whitespace-nowrap px-3.5 py-2 text-md text-gray-500">
+          <td class="text-md w-16 whitespace-nowrap px-3.5 py-2 text-gray-500">
             <div class="flex items-center gap-2 lg:px-4">
               <span class="i-mdi:apple inline-block cursor-pointer" />
               <span class="i-mdi:lightning-bolt cursor-pointer" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Modal from '@/components/base/Modal.vue'
-import Button from '@/components/base/Button.vue'
+import Modal from '@/components/Modal.vue'
+import Button from '@/components/Button.vue'
 
 const show = ref(false)
 const size = ref<'base' | 'sm' | 'md' | 'lg' | 'xl' | 'full'>('base')

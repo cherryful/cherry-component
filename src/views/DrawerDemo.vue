@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
-import Drawer from '@/components/base/Drawer.vue'
+import Drawer from '@/components/Drawer.vue'
 
 const drawer = reactive({
   left: false,
@@ -17,16 +17,16 @@ const drawer = reactive({
       <span class="inline-block w-20">
         placement:
       </span>
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.left = true">
+      <button class="rounded-md bg-indigo-500 px-2 py-1 text-white" @click="drawer.left = true">
         left
       </button>
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.right = true">
+      <button class="rounded-md bg-indigo-500 px-2 py-1 text-white" @click="drawer.right = true">
         right
       </button>
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.top = true">
+      <button class="rounded-md bg-indigo-500 px-2 py-1 text-white" @click="drawer.top = true">
         top
       </button>
-      <button class="bg-indigo-500 px-2 py-1 rounded-md text-white" @click="drawer.bottom = true">
+      <button class="rounded-md bg-indigo-500 px-2 py-1 text-white" @click="drawer.bottom = true">
         bottom
       </button>
     </div>

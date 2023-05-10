@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Tag from '@/components/base/Tag.vue'
+import Tag from '@/components/Tag.vue'
 
 function onClose() {
   alert('close')

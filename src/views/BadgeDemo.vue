@@ -1,5 +1,5 @@
 <script setup>
-import Badge from '@/components/base/Badge.vue'
+import Badge from '@/components/Badge.vue'
 </script>
 
 <template>

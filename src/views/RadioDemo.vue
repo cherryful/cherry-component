@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-import Radio from '@/components/base/Radio.vue'
+import Radio from '@/components/Radio.vue'
 
 const checkValue = ref('durian')
 const onChangeVal = ref('')

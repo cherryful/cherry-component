@@ -1,21 +1,25 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import Tree from '@/components/base/Tree.vue';
+import { ref } from 'vue'
+import Tree from '@/components/Tree.vue'
 
 const options: any = [
   {
-    label: 'A', value: 'A', children: [
+    label: 'A',
+    value: 'A',
+    children: [
       { label: 'A1', value: 'A1' },
       { label: 'A2', value: 'A2' },
       { label: 'A3', value: 'A3', disabled: true },
-    ]
+    ],
   },
   {
-    label: 'B', value: 'B', children: [
+    label: 'B',
+    value: 'B',
+    children: [
       { label: 'B1', value: 'B1' },
       { label: 'B2', value: 'B2' },
       { label: 'B3', value: 'B3' },
-    ]
+    ],
   },
   {
     label: 'C', value: 'C',

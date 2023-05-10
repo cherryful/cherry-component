@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Skeleton from '@/components/base/Skeleton.vue'
+import Skeleton from '@/components/Skeleton.vue'
 
 function onClick() {
   alert(1)
@@ -9,15 +9,15 @@ function onClick() {
 <template>
   <Skeleton />
   <div class="flex">
-    <Skeleton class="bg-primary-300 w-full" />
-    <Skeleton class="bg-secondary-300 w-full" />
-    <Skeleton class="bg-accent-300 w-full" />
+    <Skeleton class="w-full bg-primary-300" />
+    <Skeleton class="w-full bg-secondary-300" />
+    <Skeleton class="w-full bg-accent-300" />
   </div>
   <div class="flex gap-5">
-    <Skeleton as="button" class="w-16 h-16 rounded-full" @click="onClick" />
-    <Skeleton class="w-16 h-16 rounded-full bg-success-300" />
-    <Skeleton class="w-16 h-16 rounded-full bg-info-300" />
-    <Skeleton class="w-16 h-16 rounded-full bg-warning-300" />
-    <Skeleton class="w-16 h-16 rounded-full bg-error-300" />
+    <Skeleton as="button" class="h-16 w-16 rounded-full" @click="onClick" />
+    <Skeleton class="h-16 w-16 rounded-full bg-success-300" />
+    <Skeleton class="h-16 w-16 rounded-full bg-info-300" />
+    <Skeleton class="h-16 w-16 rounded-full bg-warning-300" />
+    <Skeleton class="h-16 w-16 rounded-full bg-error-300" />
   </div>
 </template>

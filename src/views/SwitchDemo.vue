@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import Switch from '@/components/base/Switch.vue'
+import Switch from '@/components/Switch.vue'
 
 const value = ref(true)
 

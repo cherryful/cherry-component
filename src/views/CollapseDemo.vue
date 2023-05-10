@@ -1,5 +1,5 @@
 <script setup>
-import Collapse from '@/components/base/Collapse.vue'
+import Collapse from '@/components/Collapse.vue'
 </script>
 
 <template>
