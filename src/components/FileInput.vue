@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { uniqueId } from 'lodash-es'
 import { computed, reactive } from 'vue'
+import { uniqueId } from '@/helper'
 
 interface FileInfo {
   id: string

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import { computed, reactive, ref } from 'vue'
-import { uniqueId } from 'lodash-es'
 import Tag from './Tag.vue'
+import { uniqueId } from '@/helper'
 
 const props = withDefaults(defineProps<{
   modelValue?: string[]
