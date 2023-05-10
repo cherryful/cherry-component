@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <script setup lang="ts">
 withDefaults(defineProps<{
   as?: 'div' | 'span' | 'button'

@@ -59,17 +59,17 @@ export default {
     <div class="w-full flex items-center">
       <div
         v-if="preIcon"
-        class="z-1 border border-r-0 border-slate-400 rounded rounded-r-none bg-white px-2 py-1.5 dark:bg-slate-800"
+        class="z-1 h-9 border border-r-0 border-slate-400 rounded rounded-r-none bg-white px-2 py-1.5 dark:bg-slate-800"
         :class="{
           'important:border-red-500 important:ring-red-500 mb-1': errorMessage,
         }"
         @click.stop="emit('prepend')"
       >
-        <div :class="preIcon" class="h-5 w-5" />
+        <div :class="preIcon" class="h-4.5 w-4.5" />
       </div>
       <span
         v-if="$slots.prepend && !preIcon"
-        class="inline-flex items-center border border-r-0 border-gray-300 rounded-l-md px-3 py-1.5 text-gray-500 sm:text-sm"
+        class="h-9 inline-flex items-center border border-r-0 border-gray-300 rounded-l-md px-3 py-1.5 text-gray-500 sm:text-sm"
       >
         <slot name="prepend" />
       </span>
@@ -90,7 +90,7 @@ export default {
       >
       <div
         v-if="suffIcon"
-        class="z-1; border border-l-0 border-slate-400 rounded rounded-l-none bg-white px-2 py-1.5 dark:bg-slate-800"
+        class="z-1 h-9 border border-l-0 border-slate-400 rounded rounded-l-none bg-white px-2 py-1.5 dark:bg-slate-800"
         :class="{
           'important:border-red-500 important:ring-red-500 mb-1': errorMessage,
         }"
@@ -100,7 +100,7 @@ export default {
       </div>
       <span
         v-if="$slots.append && !suffIcon"
-        class="inline-flex items-center border border-l-0 border-gray-300 rounded-r-md px-3 py-1.5 text-gray-500 sm:text-sm"
+        class="h-9 inline-flex items-center border border-l-0 border-gray-300 rounded-r-md px-3 py-1.5 text-gray-500 sm:text-sm"
       >
         <slot name="append" />
       </span>
@@ -114,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 .text-field-input {
-  @apply w-full border border-slate-400 rounded px-3 py-1.5 z-2;
+  @apply w-full border border-slate-400 rounded px-3 py-1.5 z-2 text-sm h-9;
   @apply bg-white dark:bg-slate-800 leading-tight;
   @apply focus:outline-none focus:ring-1 focus:ring-primary-400 focus:border-primary-400;
   @apply placeholder-gray-400 placeholder:text-sm;

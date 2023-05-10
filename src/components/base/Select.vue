@@ -120,7 +120,7 @@ const flux = reactive({
             id="listbox-option-0"
             :key="option.value"
             role="option"
-            class="relative cursor-default select-none py-2 pl-3 pr-9 text-sm"
+            class="text relative cursor-default select-none py-2 pl-3 pr-9"
             :class="{
               'bg-primary-500 text-white ': modelValue === option.value,
               'text-gray-900 hover:bg-primary-500 hover:text-white': modelValue !== option.value,

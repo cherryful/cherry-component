@@ -8,13 +8,11 @@ interface FileInfo {
   file?: File
 }
 
-interface Props {
+const props = withDefaults(defineProps<{
   fileList?: Array<FileInfo>
   placeholder?: string
   multiple?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   placeholder: 'Select a file',
   multiple: false,
 })

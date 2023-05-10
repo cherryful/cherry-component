@@ -61,17 +61,17 @@ defineExpose({
     class="fixed z-200 grid gap-2 sm:min-w-96"
     :class="{
       'left-1/2 -translate-x-1/2': align === 'center',
-      'left-12': align === 'left',
-      'right-12': align === 'right',
-      'top-12': position === 'top',
-      'bottom-12 ': position === 'bottom',
+      'left-6': align === 'left',
+      'right-6': align === 'right',
+      'top-4': position === 'top',
+      'bottom-6 ': position === 'bottom',
     }"
   >
     <div v-for="event in flux.events" :key="event.id">
       <slot :type="event.type">
         <Alert :type="event.type">
           {{ event.content }}
-        </alert>
+        </Alert>
       </slot>
     </div>
   </TransitionGroup>

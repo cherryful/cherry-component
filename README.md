@@ -40,6 +40,10 @@ Features:
 - Collapse
 - Toast
 - Skeleton
+- Table
+- Tabs
+- Tree
+- DynamicTags
 - ...
 
 ## Github pages

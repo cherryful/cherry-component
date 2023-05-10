@@ -1,11 +1,9 @@
 <script setup lang="ts">
-interface Props {
+withDefaults(defineProps<{
   type?: 'default' | 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   size?: 'sm' | 'base' | 'lg'
   content?: string
-}
-
-withDefaults(defineProps<Props>(), {
+}>(), {
   type: 'default',
   size: 'base',
   content: '',

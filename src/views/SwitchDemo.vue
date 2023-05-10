@@ -65,6 +65,12 @@ function onChange(val) {
       <Switch v-model="checkedValue" checked-value="checked" unchecked-value="unchecked" @update:model-value="onChange">
         custom-value
       </Switch>
+      <Switch :model-value="value" @update:model-value="$e => value = $e">
+        manual control
+      </Switch>
+      <Switch loading>
+        loading
+      </Switch>
     </div>
   </div>
 </template>

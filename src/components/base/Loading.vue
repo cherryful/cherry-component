@@ -1,73 +1,43 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref } from 'vue'
+import { Fragment, computed, h, nextTick, onMounted, ref, useSlots } from 'vue'
+import Spin from './Spin.vue'
 
-const props = withDefaults(defineProps<{
-  type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
-  thickness?: number
+withDefaults(defineProps<{
+  show?: boolean
 }>(), {
-  type: 'primary',
-  thickness: 6,
+  show: true,
 })
 
-const wrapper = ref<HTMLElement | null>(null)
-const spinner = ref<HTMLElement | null>(null)
+const slots = useSlots()
+// Reference: https://github.com/vuejs/core/discussions/6726
+const RenderSlot = computed(() => h(Fragment, slots.default ? slots.default() : []))
+const slotWidth = ref(1000) // i don't know why, but it works...
 
 onMounted(() => {
   nextTick(() => {
-    if (!wrapper.value || !spinner.value)
-      return
-    const size = wrapper.value.getBoundingClientRect().width / props.thickness
-    spinner.value.style.borderWidth = `${size}px`
+    if (RenderSlot.value && RenderSlot.value.children && (RenderSlot.value.children as any)[0])
+      slotWidth.value = (RenderSlot.value.children as any)[0].el.offsetWidth
   })
 })
 </script>
 
 <template>
-  <div
-    ref="wrapper"
-    v-bind="$attrs"
-    :class="{
-      'w-8 h-8': !$attrs.hasOwnProperty('class'),
-    }"
-  >
-    <slot>
-      <div
-        ref="spinner"
-        class="inline-block h-full w-full animate-spin border-gray-300 rounded-full bg-transparent"
-        :class="[[type]]"
-      >
-        <span class="sr-only">Loading...</span>
+  <template v-if="$slots.default">
+    <div class="relative" :style="{ width: `${slotWidth}px` }">
+      <div :class="{ 'opacity-30': show }">
+        <RenderSlot />
       </div>
-    </slot>
-  </div>
+      <div class="absolute left-1/2 top-2/4 -translate-x-1/2 -translate-y-1/2">
+        <Spin v-if="show" v-bind="$attrs">
+          <template #icon>
+            <slot name="icon" />
+          </template>
+          <slot />
+        </Spin>
+      </div>
+    </div>
+  </template>
+  <template v-else>
+    <Spin v-if="show" v-bind="$attrs" />
+  </template>
 </template>
-
-<style scoped>
-.primary {
-  @apply border-r-primary-500
-}
-
-.secondary {
-  @apply border-r-secondary-500
-}
-
-.accent {
-  @apply border-r-accent-500
-}
-
-.success {
-  @apply border-r-success-500
-}
-
-.info {
-  @apply border-r-info-500
-}
-
-.warning {
-  @apply border-r-warning-500
-}
-
-.error {
-  @apply border-r-error-500
-}
-</style>

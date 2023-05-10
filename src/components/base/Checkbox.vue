@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-interface Props {
+const props = withDefaults(defineProps<{
   modelValue?: any
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   checked?: boolean
   disabled?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   modelValue: false,
   type: 'primary',
   checked: false,
@@ -40,18 +38,9 @@ export default {
       :disabled="disabled"
       aria-describedby="comments-description"
       class="mr-2 h-4 w-4 border-gray-300 rounded"
-      :class="[
-        {
-          'opacity-30 cursor-not-allowed': disabled,
-          'primary': type === 'primary',
-          'secondary': type === 'secondary',
-          'accent': type === 'accent',
-          'success': type === 'success',
-          'info': type === 'info',
-          'warning': type === 'warning',
-          'error': type === 'error',
-        },
-      ]"
+      :class="[[type], {
+        'opacity-30 cursor-not-allowed': disabled,
+      }]"
     >
     <slot />
   </div>

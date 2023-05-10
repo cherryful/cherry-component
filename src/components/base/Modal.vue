@@ -3,15 +3,13 @@ import type { Ref } from 'vue'
 import { computed, toRef } from 'vue'
 import { useDOMScrollLock } from '@/composables/useDOMScrollLock'
 
-interface Props {
+const props = withDefaults(defineProps<{
   modelValue: boolean
   dismissible?: boolean
   dismissButton?: boolean
-  size?: 'base' | 'md' | 'lg' | 'xl' | 'full'
+  size?: 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'full'
   padded?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   dismissible: true,
   dismissButton: true,
   padded: true,
@@ -49,16 +47,17 @@ useDOMScrollLock(toRef(props, 'modelValue') as Ref<boolean>)
       <div
         class="fixed inset-0 bg-gray-500 transition-opacity dark:bg-gray-600"
         :class="[
-          isOpen ? 'ease-out duration-200 opacity-75' : 'ease-in duration-100 opacity-0',
+          isOpen ? 'ease-out duration-75 opacity-75' : 'ease-in duration-75 opacity-0',
         ]"
         @click.self="close"
       />
-
+      <!-- dialog -->
       <div class="min-h-full flex items-center justify-center p-2 sm:p-6">
         <div
           class="relative inline-block transform rounded-lg bg-white shadow-xl transition-all dark:bg-gray-900"
           :class="[
             {
+              'w-full sm:max-w-sm': size === 'sm',
               'w-full sm:max-w-lg': size === 'base',
               'w-full sm:max-w-xl': size === 'md',
               'w-full sm:max-w-3xl': size === 'lg',
@@ -67,7 +66,7 @@ useDOMScrollLock(toRef(props, 'modelValue') as Ref<boolean>)
               'p-4 sm:p-6': padded,
             },
             isOpen
-              ? 'duration-500 opacity-100 translate-y-0 sm:scale-100'
+              ? 'duration-300 opacity-100 translate-y-0 sm:scale-100'
               : 'duration-300 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95',
           ]"
           role="dialog"

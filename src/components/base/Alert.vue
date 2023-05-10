@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-interface Props {
+const props = withDefaults(defineProps<{
   type?: 'success' | 'info' | 'warning' | 'error' | 'primary' | 'secondary' | 'accent'
   icon?: string
   closeable?: boolean
   noIcon?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   type: 'primary',
   icon: '',
   noIcon: false,
@@ -39,24 +37,26 @@ const computedIcon = computed(() => {
 })
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
+
 <template>
   <div
     v-bind="$attrs"
-    class="flex justify-between max-w-lg p-4 rounded-lg border border-current"
+    class="max-w-lg flex justify-between border border-current rounded-lg px-4 py-3"
     :class="[[type]]"
   >
     <div class="flex">
       <div v-if="!noIcon">
-        <div class="w-6 h-6 mr-3" :class="computedIcon" />
+        <div class="mr-3 h-6 w-6" :class="computedIcon" />
       </div>
-
-      <div>
-        <slot />
-      </div>
-
-      <div v-if="closeable" class="flex justify-center items-center w-6 h-6 ml-3">
-        <div class="i-fa-times w-3 h-3 cursor-pointer transition hover:scale-125" />
-      </div>
+      <slot />
+    </div>
+    <div v-if="closeable" class="ml-3 h-6 w-6 flex items-center justify-center">
+      <div class="i-fa-times h-3 w-3 cursor-pointer transition hover:scale-125" />
     </div>
   </div>
 </template>

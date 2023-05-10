@@ -2,9 +2,10 @@
 import { onUnmounted, watch } from 'vue'
 
 const props = withDefaults(defineProps<{
-  placement?: 'top' | 'right' | 'bottom' | 'left'
   modelValue?: boolean
+  placement?: 'top' | 'right' | 'bottom' | 'left'
 }>(), {
+  modelValue: false,
   placement: 'left',
 })
 

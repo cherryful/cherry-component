@@ -2,15 +2,13 @@
 import { nextTick, reactive, ref } from 'vue'
 import { vOnClickOutside } from '@vueuse/components'
 
-interface Props {
+const props = withDefaults(defineProps<{
   position?: 'left' | 'right' | 'top' | 'bottom' | 'auto'
   trigger?: 'click' | 'hover'
   dissmissable?: boolean
   sustain?: boolean
   hoverAlive?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   position: 'auto',
   trigger: 'click',
   dissmissable: false,
@@ -79,9 +77,7 @@ const flux = reactive({
   },
 
   close() {
-    setTimeout(() => {
-      flux.status = false
-    }, 100)
+    setTimeout(() => flux.status = false, 100)
     emit('close')
   },
 
